@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.raian.newsappproject.viewModel.NewsViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        //setupActionBarWithNavController(navController)
+        setupActionBarWithNavController(navController)
 
 
     }

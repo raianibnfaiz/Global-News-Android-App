@@ -1,6 +1,7 @@
 package com.raian.newsappproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.raian.newsappproject.adapter.NewsAdapter
+import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.viewModel.NewsViewModel
 
 
@@ -17,9 +19,11 @@ import com.raian.newsappproject.viewModel.NewsViewModel
 class HomeNewsFragment : Fragment() {
     private lateinit var viewModel : NewsViewModel
     private lateinit var recyclerView:RecyclerView
-    var listNews: List<Article> = listOf()
+    var listNews: MutableList<Article> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
 
     }
 
@@ -35,11 +39,23 @@ class HomeNewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
-        recyclerView = view.findViewById(R.id.rv_recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        listNews = viewModel.list
-        recyclerView.adapter = NewsAdapter(
-            requireContext(), viewModel, listNews as ArrayList<Article>)
+
+        viewModel.list?.observe(viewLifecycleOwner
+        ) {
+            listNews = it as MutableList<Article>
+            Log.d("home", "It: ${it.toString()}")
+            Log.d("home", "listNews it is ${listNews.toString()}")
+            recyclerView = view.findViewById(R.id.rv_recyclerView)
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = NewsAdapter(
+                requireContext(), viewModel, listNews as ArrayList<Article>)
+            Log.d("home", "listNews before ${listNews.toString()}")
+        }
+        Log.d("home", "list home fragment: ${ viewModel.list?.value.toString() }")
+
+        //listNews = viewModel.list
+
+
 
     }
 

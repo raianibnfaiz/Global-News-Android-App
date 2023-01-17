@@ -1,8 +1,6 @@
 package com.raian.newsappproject.network
 
-import com.raian.newsappproject.Article
-import com.raian.newsappproject.NewsDatAaSource
-import retrofit2.Call
+import com.raian.newsappproject.models.NewsDatAaSource
 import retrofit2.http.GET
 
 interface NewsApiInterface {

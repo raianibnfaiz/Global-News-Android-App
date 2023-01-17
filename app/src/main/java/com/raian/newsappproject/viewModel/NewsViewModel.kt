@@ -1,31 +1,32 @@
 package com.raian.newsappproject.viewModel
 
-import android.app.Application
 import android.util.Log
-import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.raian.newsappproject.Article
-import com.raian.newsappproject.PostItem
+import androidx.lifecycle.viewModelScope
+import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.network.NewsApiInterface
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 @OptIn(DelicateCoroutinesApi::class)
 class NewsViewModel : ViewModel(){
     val BASE_URL = "https://newsapi.org/v2/"
-    var list: MutableList<Article> = mutableListOf()
-    private var titlesList = mutableListOf<String>()
-    private var descList = mutableListOf<String>()
-    private var imagesList = mutableListOf<String>()
-    private var linksList = mutableListOf<String>()
-
+    var _list = MutableLiveData<List<Article>>()
+    val list:LiveData<List<Article>> = _list
+    val newList = arrayListOf<Article>()
+//    private var titlesList = mutableListOf<String>()
+//    private var descList = mutableListOf<String>()
+//    private var imagesList = mutableListOf<String>()
+//    private var linksList = mutableListOf<String>()
+//fun addBlog(article: Article){
+//    newList.add(article)
+//    list.value = newList
+//}
 
     init{
          val moshi = Moshi.Builder()
@@ -40,17 +41,18 @@ class NewsViewModel : ViewModel(){
 
 
 
-        GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch{
             try {
                 val response = retrofit.getNews()
 //                for (article in response.articles) {
 //                    Log.d("MainActivity", "Result + $article")
 //                    list.add(article)
 //                }
-                list.addAll(response.articles)
-                Log.d("MainActivity", "Result + $list")
+                _list.value=response.articles
+                Log.d("home", "Result from viewmodel Listtttt+ ${_list.value}")
+                Log.d("home", "Result from viewmodel Response + ${response.articles}")
             } catch (e: Exception) {
-                Log.d("MainActivity", e.toString())
+                Log.d("home", e.toString())
 
             }
 

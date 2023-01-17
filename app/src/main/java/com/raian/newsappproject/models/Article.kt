@@ -1,4 +1,4 @@
-package com.raian.newsappproject
+package com.raian.newsappproject.models
 
 data class Article(
     val author: String?,
