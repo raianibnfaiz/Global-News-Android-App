@@ -13,10 +13,10 @@ class TabLayoutAdapter(manager: FragmentManager, lifecycle: Lifecycle) : Fragmen
     companion object {
         val tabList = listOf(
             Tab(TopNewsFragment(), "Top-News"),
-            Tab(BusinessFragment(), "Business"),
-            Tab(EntertainmentFragment(), "Entertainment"),
-            Tab(GeneralFragment(), "General"),
-            Tab(HealthFragment(), "Health"),
+//            Tab(BusinessFragment(), "Business"),
+//            Tab(EntertainmentFragment(), "Entertainment"),
+//            Tab(GeneralFragment(), "General"),
+//            Tab(HealthFragment(), "Health"),
             Tab(ScienceFragment(), "Science"),
             Tab(SportsFragment(), "Sports"),
             Tab(TechnologyFragment(), "Technology")

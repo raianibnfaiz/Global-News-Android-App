@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        checkPermission()
+        //checkPermission()
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.bookmarkFragment -> loadFragment(BookmarkFragment())

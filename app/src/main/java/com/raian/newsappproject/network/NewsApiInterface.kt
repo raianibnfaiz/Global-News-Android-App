@@ -16,7 +16,17 @@ private val retrofit =
 interface NewsApiInterface {
     @GET("top-headlines?country=us&category=business&apiKey=98d7f1e882bf4a16874d71e0258b81c2")
     suspend fun getNews(): NewsDatAaSource
+
+    @GET("top-headlines?country=us&category=sports&apiKey=98d7f1e882bf4a16874d71e0258b81c2")
+    suspend fun getSports(): NewsDatAaSource
+
+    @GET("top-headlines?country=us&category=science&apiKey=98d7f1e882bf4a16874d71e0258b81c2")
+    suspend fun getScience(): NewsDatAaSource
+
+    @GET("top-headlines?country=us&category=technology&apiKey=98d7f1e882bf4a16874d71e0258b81c2")
+    suspend fun getTechnology(): NewsDatAaSource
 }
+
 object NewsApi {
     val retrofitService: NewsApiInterface by lazy { retrofit.create(NewsApiInterface::class.java) }
 }
