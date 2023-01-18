@@ -1,4 +1,4 @@
-package com.raian.newsappproject
+package com.raian.newsappproject.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.raian.newsappproject.R
 import com.raian.newsappproject.adapter.NewsAdapter
 import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.viewModel.NewsViewModel
@@ -16,7 +17,7 @@ import com.raian.newsappproject.viewModel.NewsViewModel
 
 
 
-class HomeNewsFragment : Fragment() {
+class TopNewsFragment : Fragment() {
     private lateinit var viewModel : NewsViewModel
     private lateinit var recyclerView:RecyclerView
     var listNews: MutableList<Article> = mutableListOf()

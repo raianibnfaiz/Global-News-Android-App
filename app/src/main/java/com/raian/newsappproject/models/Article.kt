@@ -1,5 +1,6 @@
 package com.raian.newsappproject.models
 
+
 data class Article(
     val author: String?,
     val content: String?,

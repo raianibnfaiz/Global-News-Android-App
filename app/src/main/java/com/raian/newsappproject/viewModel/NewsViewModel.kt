@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raian.newsappproject.models.Article
+import com.raian.newsappproject.network.NewsApi
 import com.raian.newsappproject.network.NewsApiInterface
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -29,21 +30,22 @@ class NewsViewModel : ViewModel(){
 //}
 
     init{
-         val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-            .create(NewsApiInterface::class.java)
-
+//        val moshi = Moshi.Builder()
+//            .add(KotlinJsonAdapterFactory())
+//            .build()
+//
+//        val retrofit = Retrofit.Builder()
+//            .baseUrl(BASE_URL)
+//            .addConverterFactory(MoshiConverterFactory.create(moshi))
+//            .build()
+//            .create(NewsApiInterface::class.java)
 
 
         viewModelScope.launch{
             try {
-                val response = retrofit.getNews()
+                //val response = retrofit.getNews()
+                val response = NewsApi.retrofitService.getNews()
 //                for (article in response.articles) {
 //                    Log.d("MainActivity", "Result + $article")
 //                    list.add(article)

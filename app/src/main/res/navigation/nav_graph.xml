@@ -3,11 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeNewsFragment">
-
+    app:startDestination="@id/homeFragment2">
     <fragment
-        android:id="@+id/homeNewsFragment"
-        android:name="com.raian.newsappproject.HomeNewsFragment"
-        android:label="fragment_home_news"
-        tools:layout="@layout/fragment_home_news" />
+        android:id="@+id/homeFragment2"
+        android:name="com.raian.newsappproject.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/bookmarkFragment2"
+        android:name="com.raian.newsappproject.fragment.BookmarkFragment"
+        android:label="fragment_bookmark"
+        tools:layout="@layout/fragment_bookmark" />
 </navigation>

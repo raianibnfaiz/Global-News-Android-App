@@ -22,6 +22,7 @@ class NewsAdapter (private val context: Context,
 
         val itemTitle: TextView = itemView.findViewById(R.id.tv_title)
         val itemDetail: TextView = itemView.findViewById(R.id.tv_description)
+        val tv_author: TextView = itemView.findViewById(R.id.tv_author)
         val itemPicture: ImageView = itemView.findViewById(R.id.iv_image)
     }
 
@@ -38,6 +39,7 @@ class NewsAdapter (private val context: Context,
         holder.itemTitle.text = item.title
         Log.d("title", item.title.toString())
         holder.itemDetail.text = item.description
+        holder.tv_author.text = item.author
 
 
         Picasso.get().load(item.urlToImage).into(holder.itemPicture)
