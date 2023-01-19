@@ -2,17 +2,24 @@ package com.raian.newsappproject.viewModel
 
 import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.raian.newsappproject.Repository.NewsRepository
+import com.raian.newsappproject.db.NewsDatabase
 import com.raian.newsappproject.models.Article
+import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.network.NewsApi
 import kotlinx.coroutines.*
 
 @OptIn(DelicateCoroutinesApi::class)
-class NewsViewModel : ViewModel(){
+class NewsViewModel(application: Application) : AndroidViewModel(application){
+    lateinit var repository : NewsRepository
     val BASE_URL = "https://newsapi.org/v2/"
+
+    val _tempArticle = MutableLiveData<List<Article>>()
     var _list = MutableLiveData<List<Article>>()
     val list:LiveData<List<Article>> = _list
     val _sportsNewsList= MutableLiveData<List<Article>>()
@@ -28,13 +35,17 @@ class NewsViewModel : ViewModel(){
 //fun addBlog(article: Article){
 //    newList.add(article)
 //    list.value = newList
-//}
+//
 
     init{
+
+        val newsDao = NewsDatabase.getDatabase(application)!!.newsDao()
+        repository = NewsRepository(newsDao)
+        getArticle()
         getBusinessNews()
-        getSportsNews()
-        getScienceNews()
-        getTechnologyNews()
+//        getSportsNews()
+//        getScienceNews()
+//        getTechnologyNews()
 
 //            val newsDao = NewsDatabase.getDatabase(application)?.newsDao()
 //            repository = newsDao?.let { NewsRepository(it) }!!
@@ -132,4 +143,35 @@ class NewsViewModel : ViewModel(){
 
         }
     }
+    fun getArticle(){
+        viewModelScope.launch {
+            try {
+                val response = NewsApi.retrofitService.getNews()
+                val adjust = adjustArticleModel(response.articles, "business")
+                repository.insertArticles(adjust)
+            }
+            catch (e:Exception){
+                Log.d("Error", "error: e")
+            }
+
+
+        }
+
+    }
+    fun adjustArticleModel(articles: List<Article>, category: String): List<TempArticle> {
+        return articles.map{ article->
+        TempArticle(
+            0,
+            article.content,
+            article.author,
+            article.description,
+            article.publishedAt,
+            article.source,
+            article.title,
+            category,
+            article.url,
+            article.urlToImage
+        )
+    }
+}
 }
