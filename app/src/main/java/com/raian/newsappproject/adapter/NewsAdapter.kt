@@ -24,6 +24,7 @@ class NewsAdapter (private val context: Context,
         val itemDetail: TextView = itemView.findViewById(R.id.tv_description)
         val tv_author: TextView = itemView.findViewById(R.id.tv_author)
         val itemPicture: ImageView = itemView.findViewById(R.id.iv_image)
+        val itemDate:TextView = itemView.findViewById(R.id.tv_publishDate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -40,6 +41,7 @@ class NewsAdapter (private val context: Context,
         Log.d("title", item.title.toString())
         holder.itemDetail.text = item.description
         holder.tv_author.text = item.author
+        holder.itemDate.text = item.publishedAt
 
 
         Picasso.get().load(item.urlToImage).into(holder.itemPicture)

@@ -43,9 +43,9 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
         repository = NewsRepository(newsDao)
         getArticle()
         getBusinessNews()
-//        getSportsNews()
-//        getScienceNews()
-//        getTechnologyNews()
+        getSportsNews()
+        getScienceNews()
+        getTechnologyNews()
 
 //            val newsDao = NewsDatabase.getDatabase(application)?.newsDao()
 //            repository = newsDao?.let { NewsRepository(it) }!!
