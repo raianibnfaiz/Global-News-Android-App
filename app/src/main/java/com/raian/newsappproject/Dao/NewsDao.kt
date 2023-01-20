@@ -15,4 +15,19 @@ interface NewsDao {
 
     @Query("SELECT * FROM articles")
     fun getArticles(): LiveData<List<TempArticle>>
+
+    @Query("SELECT * FROM articles WHERE catagory = 'business' ")
+    fun getBusinessNews():LiveData<List<TempArticle>>
+
+    @Query("SELECT * FROM articles WHERE catagory = 'sports' ")
+    fun getSportsNews():LiveData<List<TempArticle>>
+
+    @Query("SELECT * FROM articles WHERE catagory = 'science' ")
+    fun getScienceNews():LiveData<List<TempArticle>>
+
+    @Query("SELECT * FROM articles WHERE catagory = 'technology' ")
+    fun getTechnologyNews():LiveData<List<TempArticle>>
+    @Query("Delete from articles")
+    fun deleteAll()
+
 }

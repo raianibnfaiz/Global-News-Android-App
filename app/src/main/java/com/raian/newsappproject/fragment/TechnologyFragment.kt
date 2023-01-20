@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.raian.newsappproject.R
 import com.raian.newsappproject.adapter.NewsAdapter
+import com.raian.newsappproject.adapter.TechnologyAdapter
 import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.viewModel.NewsViewModel
 
@@ -36,14 +37,14 @@ class TechnologyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.technologyList?.observe(viewLifecycleOwner
+        viewModel.readAllTechnologyNews?.observe(viewLifecycleOwner
         ) {
             listNews = it as MutableList<Article>
             Log.d("sports home", "sports It: ${it.toString()}")
             Log.d("sports home", "listNews it is ${listNews.toString()}")
             recyclerView = view.findViewById(R.id.rv_recyclerView)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.adapter = NewsAdapter(
+            recyclerView.adapter = TechnologyAdapter(
                 requireContext(), viewModel, listNews as ArrayList<Article>)
             Log.d("home", "listNews before ${listNews.toString()}")
         }

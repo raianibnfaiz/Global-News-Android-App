@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raian.newsappproject.Repository.NewsRepository
 import com.raian.newsappproject.db.NewsDatabase
@@ -17,8 +16,11 @@ import kotlinx.coroutines.*
 @OptIn(DelicateCoroutinesApi::class)
 class NewsViewModel(application: Application) : AndroidViewModel(application){
     lateinit var repository : NewsRepository
+    val readAllBusinessNews:LiveData<List<TempArticle>>
+    val readAllSportsNews: LiveData<List<TempArticle>>
+    val readAllSciencesNews: LiveData<List<TempArticle>>
+    val readAllTechnologyNews: LiveData<List<TempArticle>>
     val BASE_URL = "https://newsapi.org/v2/"
-
     val _tempArticle = MutableLiveData<List<Article>>()
     var _list = MutableLiveData<List<Article>>()
     val list:LiveData<List<Article>> = _list
@@ -28,24 +30,24 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
     val scienceList:LiveData<List<Article>> = _scienceNewsList
     val _technologyNewsList= MutableLiveData<List<Article>>()
     val technologyList:LiveData<List<Article>> = _technologyNewsList
-//    private var titlesList = mutableListOf<String>()
-//    private var descList = mutableListOf<String>()
-//    private var imagesList = mutableListOf<String>()
-//    private var linksList = mutableListOf<String>()
-//fun addBlog(article: Article){
-//    newList.add(article)
-//    list.value = newList
-//
+
 
     init{
+        val applicationDao = NewsDatabase.getDatabase(application)?.newsDao()
+        repository=applicationDao?.let { NewsRepository(it) }!!
 
-        val newsDao = NewsDatabase.getDatabase(application)!!.newsDao()
-        repository = NewsRepository(newsDao)
-        getArticle()
-        getBusinessNews()
-        getSportsNews()
-        getScienceNews()
-        getTechnologyNews()
+        setBusinessArticle()
+        //getBusinessNews()
+        setSportsArticle()
+        setScienceArticle()
+        setTechnologyArticle()
+        readAllBusinessNews = repository.getBusinessNews()
+        readAllSportsNews = repository.getSportsNews()
+        readAllSciencesNews = repository.getScienceNews()
+        readAllTechnologyNews = repository.getTechnologyNews()
+//        getSportsNews()
+//        getScienceNews()
+//        getTechnologyNews()
 
 //            val newsDao = NewsDatabase.getDatabase(application)?.newsDao()
 //            repository = newsDao?.let { NewsRepository(it) }!!
@@ -143,7 +145,23 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
 
         }
     }
-    fun getArticle(){
+
+    fun setSportsArticle(){
+        viewModelScope.launch {
+            try {
+                val response = NewsApi.retrofitService.getSports()
+                val adjust = adjustArticleModel(response.articles, "sports")
+                repository.insertArticles(adjust)
+            }
+            catch (e:Exception){
+                Log.d("Error", "error: e")
+            }
+
+
+        }
+    }
+
+    fun setBusinessArticle(){
         viewModelScope.launch {
             try {
                 val response = NewsApi.retrofitService.getNews()
@@ -158,12 +176,42 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
         }
 
     }
+    fun setScienceArticle(){
+        viewModelScope.launch {
+            try {
+                val response = NewsApi.retrofitService.getScience()
+                val adjust = adjustArticleModel(response.articles, "science")
+                repository.insertArticles(adjust)
+            }
+            catch (e:Exception){
+                Log.d("Error", "error: e")
+            }
+
+
+        }
+    }
+
+    fun setTechnologyArticle(){
+        viewModelScope.launch {
+            try {
+                val response = NewsApi.retrofitService.getTechnology()
+                val adjust = adjustArticleModel(response.articles, "technology")
+                repository.insertArticles(adjust)
+            }
+            catch (e:Exception){
+                Log.d("Error", "error: e")
+            }
+
+
+        }
+    }
+
     fun adjustArticleModel(articles: List<Article>, category: String): List<TempArticle> {
         return articles.map{ article->
         TempArticle(
             0,
-            article.content,
             article.author,
+            article.content,
             article.description,
             article.publishedAt,
             article.source,

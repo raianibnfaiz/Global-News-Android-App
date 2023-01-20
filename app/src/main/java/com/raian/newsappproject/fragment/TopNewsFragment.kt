@@ -41,7 +41,7 @@ class TopNewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
-        viewModel.list?.observe(viewLifecycleOwner
+        viewModel.readAllBusinessNews?.observe(viewLifecycleOwner
         ) {
             listNews = it as MutableList<Article>
             Log.d("home", "It: ${it.toString()}")

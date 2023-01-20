@@ -8,33 +8,33 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.R
+import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import com.squareup.picasso.Picasso
 
-class NewsAdapter (private val context: Context,
-                   private val viewModel: NewsViewModel,
-                   private val arrayList: ArrayList<Article>
-) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
-    private var theNewsList = viewModel.readAllBusinessNews.value
-    class NewsViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
+class TechnologyAdapter(private val context: Context,
+                     private val viewModel: NewsViewModel,
+                     private val arrayList: ArrayList<Article>
+) : RecyclerView.Adapter<TechnologyAdapter.TechnologyViewHolder>() {
+    private var theNewsList = viewModel.readAllTechnologyNews.value
+    class TechnologyViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
 
         val itemTitle: TextView = itemView.findViewById(R.id.tv_title)
         val itemDetail: TextView = itemView.findViewById(R.id.tv_description)
         val itemAuthor: TextView = itemView.findViewById(R.id.tv_author)
         val itemPicture: ImageView = itemView.findViewById(R.id.iv_image)
-        val itemDate:TextView = itemView.findViewById(R.id.tv_publishDate)
+        val itemDate: TextView = itemView.findViewById(R.id.tv_publishDate)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TechnologyViewHolder {
         Log.d("title", "oncreateViewHolder entered")
-        val root = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-        return NewsViewHolder(root)
+        val root = LayoutInflater.from(parent.context).inflate(R.layout.new_item_layout, parent, false)
+        return TechnologyViewHolder(root)
     }
 
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TechnologyViewHolder, position: Int) {
         val currentData = theNewsList?.get(position)
         //val item = arrayList[position]
 
@@ -59,7 +59,3 @@ class NewsAdapter (private val context: Context,
         notifyDataSetChanged()
     }
 }
-
-
-
-
