@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_detail_bookmark_news.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_detail_bookmark_news.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_health.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_health.xml"
+    },
+    {
+        "merged": "com.raian.newsappproject.app-mergeDebugResources-50:/layout/fragment_web_page_view.xml",
+        "source": "com.raian.newsappproject.app-main-53:/layout/fragment_web_page_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_technology.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_technology.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_science.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_science.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_entertainment.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_entertainment.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_web_page_view.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_web_page_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_detail_news_article.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_detail_news_article.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_top_news.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_top_news.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\newsl_list_view_layout.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\newsl_list_view_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\item_layout.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_general.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_general.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_bookmark.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_bookmark.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\fragment_sports.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_sports.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-mergeDebugResources-50:\\layout\\new_item_layout.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\new_item_layout.xml"
+    }
+]

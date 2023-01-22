@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment2">
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.raian.newsappproject.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_detailNewsArticleFragment22"
+            app:destination="@id/detailNewsArticleFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsArticleFragment2"
+        android:name="com.raian.newsappproject.fragment.DetailNewsArticleFragment"
+        android:label="fragment_detail_news_article"
+        tools:layout="@layout/fragment_detail_news_article" >
+        <argument
+            android:name="details"
+            app:argType="com.raian.newsappproject.models.TempArticle" />
+        <action
+            android:id="@+id/action_detailNewsArticleFragment2_to_webPageViewFragment"
+            app:destination="@id/webPageViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment2"
+        android:name="com.raian.newsappproject.fragment.BookmarkFragment"
+        android:label="fragment_bookmark"
+        tools:layout="@layout/fragment_bookmark" >
+        <action
+            android:id="@+id/action_bookmarkFragment2_to_detailBookmarkNewsFragment"
+            app:destination="@id/detailBookmarkNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBookmarkNewsFragment"
+        android:name="com.raian.newsappproject.fragment.DetailBookmarkNewsFragment"
+        android:label="fragment_detail_bookmark_news"
+        tools:layout="@layout/fragment_detail_bookmark_news" >
+        <argument
+            android:name="detailBookmark"
+            app:argType="com.raian.newsappproject.models.Bookmark" />
+    </fragment>
+    <fragment
+        android:id="@+id/webPageViewFragment"
+        android:name="com.raian.newsappproject.WebPageViewFragment"
+        android:label="fragment_web_page_view"
+        tools:layout="@layout/fragment_web_page_view" >
+        <argument
+            android:name="news_url"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

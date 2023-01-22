@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.raian.newsappproject.app-merged_res-51:/layout_fragment_web_page_view.xml.flat",
+        "source": "com.raian.newsappproject.app-main-53:/layout/fragment_web_page_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_entertainment.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_entertainment.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-pngs-46:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\menu_options_menu.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\menu\\options_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_detail_news_article.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_detail_news_article.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_general.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_general.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_detail_bookmark_news.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_detail_bookmark_news.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_top_news.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_top_news.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_newsl_list_view_layout.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\newsl_list_view_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_baseline_favorite_border_24.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\baseline_favorite_border_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_baseline_no_internet.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_baseline_no_internet.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_item_layout.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\font_bell.otf.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\font\\bell.otf"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\font_fabrica.otf.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\font\\fabrica.otf"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_baseline_bookmark_24.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_baseline_bookmark_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_sports.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_sports.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_connection_error.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_connection_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_science.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_science.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_web_page_view.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_web_page_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_loading_animation.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\loading_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_health.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_health.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_technology.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_technology.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_ic_baseline_favorite_24.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\ic_baseline_favorite_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_fragment_bookmark.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\fragment_bookmark.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_new_item_layout.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\new_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\drawable_loading_img.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\drawable\\loading_img.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-merged_res-51:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\7.4\\com.raian.newsappproject.app-main-53:\\mipmap-hdpi\\ic_launcher.webp"
+    }
+]
