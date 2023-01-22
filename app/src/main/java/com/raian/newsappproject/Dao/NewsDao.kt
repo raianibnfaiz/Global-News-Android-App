@@ -1,11 +1,9 @@
 package com.raian.newsappproject.Dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.raian.newsappproject.models.Article
+import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 
 @Dao
@@ -27,7 +25,36 @@ interface NewsDao {
 
     @Query("SELECT * FROM articles WHERE catagory = 'technology' ")
     fun getTechnologyNews():LiveData<List<TempArticle>>
-    @Query("Delete from articles")
-    fun deleteAll()
 
+    @Query("Delete from articles where catagory = 'sports' ")
+    fun deleteSports()
+
+    @Query("Delete from articles where catagory = 'technology' ")
+    fun deleteTechnology()
+
+    @Query("Delete from articles where catagory = 'science' ")
+    fun deleteScience()
+
+    @Query("Delete from articles where catagory = 'business' ")
+    fun deleteTopNews()
+
+    //FOR BOOKMARK FUNCTIONALITY
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertBookMark(article: Bookmark)
+
+    @Query("SELECT * FROM bookmark")
+    fun getAllBookMark(): LiveData<List<Bookmark>>
+
+    @Update
+    suspend fun update(article: TempArticle)
+
+    @Delete
+    suspend fun delete(article: TempArticle)
+
+    @Query("DELETE FROM bookmark")
+    suspend fun deleteAllBookmarks()
+
+    @Query("DELETE FROM articles")
+    suspend fun deleteAll()
 }

@@ -14,10 +14,10 @@ import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import com.squareup.picasso.Picasso
 
-class NewsAdapter (private val context: Context,
-                   private val viewModel: NewsViewModel,
-                   private val arrayList: ArrayList<Article>
-) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class TopNewsAdapter (private val context: Context,
+                      private val viewModel: NewsViewModel,
+                      private val arrayList: ArrayList<TempArticle>
+) : RecyclerView.Adapter<TopNewsAdapter.NewsViewHolder>() {
     private var theNewsList = viewModel.readAllBusinessNews.value
     class NewsViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
 

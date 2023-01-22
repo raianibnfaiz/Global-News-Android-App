@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //checkPermission()
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.bookmarkFragment -> loadFragment(BookmarkFragment())
@@ -40,22 +38,6 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-    private fun checkPermission() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.INTERNET
-            ) == PackageManager.PERMISSION_DENIED
-        ) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.INTERNET),
-                internetPermissionCode
-            )
-        } else {
-            Toast.makeText(this, "Permission already granted", Toast.LENGTH_SHORT)
-                .show()
 
-        }
-    }
 
 }

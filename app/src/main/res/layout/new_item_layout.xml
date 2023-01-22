@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewNews"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="16dp"
     app:cardCornerRadius="8dp">
 
@@ -75,12 +77,19 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <ImageView
+            <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:id="@+id/favouriteIcon"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="13dp"
-                android:contentDescription="bookmark"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_favorite_24"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="favourite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/date"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_favorite_border_24"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

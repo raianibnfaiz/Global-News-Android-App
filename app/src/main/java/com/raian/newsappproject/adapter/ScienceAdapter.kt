@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso
 
 class ScienceAdapter(private val context: Context,
                     private val viewModel: NewsViewModel,
-                    private val arrayList: ArrayList<Article>
+                    private val arrayList: ArrayList<TempArticle>
 ) : RecyclerView.Adapter<ScienceAdapter.ScienceViewHolder>() {
     private var theNewsList = viewModel.readAllSciencesNews.value
     class ScienceViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {

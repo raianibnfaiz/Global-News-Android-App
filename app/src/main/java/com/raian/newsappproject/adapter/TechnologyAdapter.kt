@@ -7,16 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.utils.widget.ImageFilterButton
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.raian.newsappproject.R
+import com.raian.newsappproject.fragment.DetailNewsArticleFragment
+import com.raian.newsappproject.fragment.HomeFragmentDirections
 import com.raian.newsappproject.models.Article
+import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import com.squareup.picasso.Picasso
 
 class TechnologyAdapter(private val context: Context,
                      private val viewModel: NewsViewModel,
-                     private val arrayList: ArrayList<Article>
+                     private val arrayList: ArrayList<TempArticle>
 ) : RecyclerView.Adapter<TechnologyAdapter.TechnologyViewHolder>() {
     private var theNewsList = viewModel.readAllTechnologyNews.value
     class TechnologyViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
@@ -26,6 +34,8 @@ class TechnologyAdapter(private val context: Context,
         val itemAuthor: TextView = itemView.findViewById(R.id.tv_author)
         val itemPicture: ImageView = itemView.findViewById(R.id.iv_image)
         val itemDate: TextView = itemView.findViewById(R.id.tv_publishDate)
+        val favButton: ImageFilterButton = itemView.findViewById(R.id.favouriteIcon)
+        val newsCard: CardView = itemView.findViewById(R.id.cardViewNews)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TechnologyViewHolder {
@@ -43,12 +53,35 @@ class TechnologyAdapter(private val context: Context,
         holder.itemDetail.text = currentData?.description
         holder.itemAuthor.text = currentData?.author
         holder.itemDate.text = currentData?.publishedAt
+        holder.favButton.setOnClickListener{
+            val bookmarkNews = currentData?.source?.let { it1 ->
+                Bookmark(
+                    0,
+                   currentData?.author,
+                   currentData?.content,
+                   currentData?.description,
+                   currentData?.publishedAt,
+                   currentData?.title,
+                   currentData?.url,
+                   currentData?.urlToImage
+                )
+            }
+            if (bookmarkNews != null) {
+                viewModel.addBookMarkArticle(bookmarkNews)
+            }
+            Toast.makeText(context, "BookMark Inserted", Toast.LENGTH_SHORT).show()
+        }
+        holder.newsCard.setOnClickListener {
+            Toast.makeText(context, "Card Clicked", Toast.LENGTH_SHORT).show()
+            val action = HomeFragmentDirections.actionHomeFragment2ToDetailNewsArticleFragment22(currentData!!)
+
+            holder.itemView.findNavController().navigate(
+                action
+            )
+        }
 
 
         Picasso.get().load(currentData?.urlToImage).into(holder.itemPicture)
-//        Glide.with(holder.itemPicture)
-//            .load(item.urlToImage?.get(position))
-//            .into(holder.itemPicture)
     }
 
     override fun getItemCount(): Int {

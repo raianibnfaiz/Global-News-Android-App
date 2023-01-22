@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.raian.newsappproject.Dao.NewsDao
 import com.raian.newsappproject.converter.NewsConverter
+import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 
-@Database(entities = [TempArticle::class], version = 1, exportSchema = false)
+@Database(entities = [TempArticle::class, Bookmark::class], version = 3, exportSchema = false)
 @TypeConverters(NewsConverter::class)
 abstract class NewsDatabase : RoomDatabase() {
     abstract fun newsDao(): NewsDao

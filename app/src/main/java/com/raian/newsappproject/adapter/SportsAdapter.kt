@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso
 
 class SportsAdapter(private val context: Context,
                     private val viewModel: NewsViewModel,
-                    private val arrayList: ArrayList<Article>
+                    private val arrayList: ArrayList<TempArticle>
 ) : RecyclerView.Adapter<SportsAdapter.SportsViewHolder>() {
     private var theNewsList = viewModel.readAllSportsNews.value
     class SportsViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
@@ -46,9 +46,6 @@ class SportsAdapter(private val context: Context,
 
 
         Picasso.get().load(currentData?.urlToImage).into(holder.itemPicture)
-//        Glide.with(holder.itemPicture)
-//            .load(item.urlToImage?.get(position))
-//            .into(holder.itemPicture)
     }
 
     override fun getItemCount(): Int {

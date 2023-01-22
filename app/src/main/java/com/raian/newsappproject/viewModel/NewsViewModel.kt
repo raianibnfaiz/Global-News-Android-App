@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.raian.newsappproject.Repository.NewsRepository
 import com.raian.newsappproject.db.NewsDatabase
 import com.raian.newsappproject.models.Article
+import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.network.NewsApi
 import kotlinx.coroutines.*
@@ -16,6 +17,7 @@ import kotlinx.coroutines.*
 @OptIn(DelicateCoroutinesApi::class)
 class NewsViewModel(application: Application) : AndroidViewModel(application){
     lateinit var repository : NewsRepository
+    lateinit var bookMarkNews: LiveData<List<Bookmark>>
     val readAllBusinessNews:LiveData<List<TempArticle>>
     val readAllSportsNews: LiveData<List<TempArticle>>
     val readAllSciencesNews: LiveData<List<TempArticle>>
@@ -33,21 +35,24 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
 
 
     init{
+    Log.e("Error", "init")
         val applicationDao = NewsDatabase.getDatabase(application)?.newsDao()
         repository=applicationDao?.let { NewsRepository(it) }!!
 
-        setBusinessArticle()
+        //setBusinessArticle()
         //getBusinessNews()
-        setSportsArticle()
-        setScienceArticle()
-        setTechnologyArticle()
+
+       // setSportsArticle()
+        //setScienceArticle()
+        //setTechnologyArticle()
+        bookMarkNews = repository.getAllBookMarkNews()
         readAllBusinessNews = repository.getBusinessNews()
         readAllSportsNews = repository.getSportsNews()
         readAllSciencesNews = repository.getScienceNews()
         readAllTechnologyNews = repository.getTechnologyNews()
 //        getSportsNews()
 //        getScienceNews()
-//        getTechnologyNews()
+        getTechnologyNews()
 
 //            val newsDao = NewsDatabase.getDatabase(application)?.newsDao()
 //            repository = newsDao?.let { NewsRepository(it) }!!
@@ -68,12 +73,17 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
 
 
     }
+    fun addBookMarkArticle(article: Bookmark) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.insertBookMarkArticle(article)
+        }
+    }
 
     fun getBusinessNews(){
         viewModelScope.launch{
             try {
                 //val response = retrofit.getNews()
-                val response = NewsApi.retrofitService.getNews()
+                val response = NewsApi.retrofitService.getBusiness()
 //                for (article in response.articles) {
 //                    Log.d("MainActivity", "Result + $article")
 //                    list.add(article)
@@ -164,7 +174,7 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
     fun setBusinessArticle(){
         viewModelScope.launch {
             try {
-                val response = NewsApi.retrofitService.getNews()
+                val response = NewsApi.retrofitService.getBusiness()
                 val adjust = adjustArticleModel(response.articles, "business")
                 repository.insertArticles(adjust)
             }
@@ -195,6 +205,7 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
         viewModelScope.launch {
             try {
                 val response = NewsApi.retrofitService.getTechnology()
+                //val response = repository.getTechnologyNews()
                 val adjust = adjustArticleModel(response.articles, "technology")
                 repository.insertArticles(adjust)
             }
@@ -218,8 +229,26 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
             article.title,
             category,
             article.url,
-            article.urlToImage
+            article.urlToImage,
+            false
         )
     }
+
 }
+    fun addAllArticle(article: List<TempArticle>) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.insertArticles(article)
+        }
+    }
+
+    fun deleteArticle(){
+        viewModelScope.launch{
+            try {
+                //repository.deleteAll()
+            }
+            catch (e:Exception){
+                Log.d("Error", "error: e")
+            }
+        }
+    }
 }
