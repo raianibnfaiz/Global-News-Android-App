@@ -6,22 +6,22 @@ import java.lang.System;
 public abstract interface NewsApiInterface {
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.GET(value = "top-headlines?country=us&category=business&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=business&apiKey=14cae576ef1844059b621b865d79c164")
     public abstract java.lang.Object getBusiness(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.GET(value = "top-headlines?country=us&category=sports&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=sports&apiKey=14cae576ef1844059b621b865d79c164")
     public abstract java.lang.Object getSports(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.GET(value = "top-headlines?country=us&category=science&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=science&apiKey=14cae576ef1844059b621b865d79c164")
     public abstract java.lang.Object getScience(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.GET(value = "top-headlines?country=us&category=technology&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=technology&apiKey=14cae576ef1844059b621b865d79c164")
     public abstract java.lang.Object getTechnology(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
 }

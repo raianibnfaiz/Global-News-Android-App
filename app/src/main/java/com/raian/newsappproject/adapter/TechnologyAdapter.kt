@@ -1,6 +1,8 @@
 package com.raian.newsappproject.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -21,12 +23,14 @@ import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import com.squareup.picasso.Picasso
+import java.util.*
+import kotlin.collections.ArrayList
 
 class TechnologyAdapter(private val context: Context,
                      private val viewModel: NewsViewModel,
-                     private val arrayList: ArrayList<TempArticle>
+                     private val arrayList: List<TempArticle>
 ) : RecyclerView.Adapter<TechnologyAdapter.TechnologyViewHolder>() {
-    private var theNewsList = viewModel.readAllTechnologyNews.value
+    private var theNewsList = arrayList
     class TechnologyViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
 
         val itemTitle: TextView = itemView.findViewById(R.id.tv_title)
@@ -48,11 +52,49 @@ class TechnologyAdapter(private val context: Context,
         val currentData = theNewsList?.get(position)
         //val item = arrayList[position]
 
-        holder.itemTitle.text = currentData?.title
-        Log.d("title", currentData?.title.toString())
-        holder.itemDetail.text = currentData?.description
-        holder.itemAuthor.text = currentData?.author
-        holder.itemDate.text = currentData?.publishedAt
+        if (!TextUtils.isEmpty(currentData?.title)) {
+            holder.itemTitle.text = currentData?.title
+        } else {
+            holder.itemTitle.text = "No Title!"
+        }
+
+        if (!TextUtils.isEmpty(currentData?.description)) {
+            holder.itemDetail.text = currentData?.description
+        } else {
+            holder.itemDetail.text = "No Description!"
+        }
+
+        if (!TextUtils.isEmpty(currentData?.author)) {
+            holder.itemAuthor.text = currentData?.author
+        } else {
+            holder.itemAuthor.text = "No Author!"
+        }
+        if (!TextUtils.isEmpty(currentData?.publishedAt)) {
+            holder.itemDate.text = currentData?.publishedAt?.removeRange(10..19) ?: "No Date"
+        } else {
+            holder.itemDate.text = "No Date"
+        }
+        if (!TextUtils.isEmpty(currentData?.urlToImage)) {
+            Picasso.get()
+                .load(currentData?.urlToImage)
+                .placeholder(R.drawable.loading_animation)
+                .fit()
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_connection_error)
+                .centerCrop(1)
+                .centerCrop()
+                .error(R.drawable.ic_connection_error)
+                .into(holder.itemPicture)
+        } else {
+            Picasso.get()
+                .load(R.drawable.ic_connection_error)
+                .fit()
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_connection_error)
+                .centerCrop(1)
+                .centerCrop()
+                .into(holder.itemPicture)
+        }
         holder.favButton.setOnClickListener{
             val bookmarkNews = currentData?.source?.let { it1 ->
                 Bookmark(
@@ -73,7 +115,7 @@ class TechnologyAdapter(private val context: Context,
         }
         holder.newsCard.setOnClickListener {
             Toast.makeText(context, "Card Clicked", Toast.LENGTH_SHORT).show()
-            val action = HomeFragmentDirections.actionHomeFragment2ToDetailNewsArticleFragment22(currentData!!)
+            val action = HomeFragmentDirections.actionHomeFragment2ToDetailNewsArticleFragment(currentData!!)
 
             holder.itemView.findNavController().navigate(
                 action
@@ -90,5 +132,22 @@ class TechnologyAdapter(private val context: Context,
     fun setData(note: List<TempArticle>){
         this.theNewsList = note
         notifyDataSetChanged()
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    fun filterList(filterlist: List<TempArticle>) {
+        theNewsList = filterlist
+        notifyDataSetChanged()
+    }
+
+    fun filter(text: String) {
+        val filteredList = ArrayList<TempArticle>()
+        for (article in theNewsList!!) {
+            if (article.title?.lowercase(Locale.ROOT)
+                    ?.contains(text.lowercase(Locale.ROOT)) == true
+            ) {
+                filteredList.add(article)
+            }
+        }
+        filterList(filteredList)
     }
 }

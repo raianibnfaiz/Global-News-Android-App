@@ -1,11 +1,9 @@
 package com.raian.newsappproject.fragment
 
 import android.os.Bundle
-import android.util.Log
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,15 +20,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SportsFragment : Fragment() {
-    private lateinit var viewModel : NewsViewModel
+    private lateinit var viewModel: NewsViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var swapRefresh: SwipeRefreshLayout
     lateinit var repository: NewsRepository
     var listNews = ArrayList<TempArticle>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setHasOptionsMenu(true)
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +38,7 @@ class SportsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sports, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val applicationDao = NewsDatabase.getDatabase(requireContext())?.newsDao()
@@ -48,7 +48,7 @@ class SportsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
         val adapter = SportsAdapter(
-            requireContext(), viewModel, listNews as ArrayList<TempArticle>
+            requireContext(), viewModel, listNews
         )
         recyclerView.adapter = adapter
         lifecycleScope.launch {
@@ -74,9 +74,25 @@ class SportsFragment : Fragment() {
             }
             swapRefresh.isRefreshing = false
         }
-
-
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_item, menu)
+        val item = menu.findItem(R.id.actionSearch)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    val adapter = recyclerView.adapter as SportsAdapter
+                    adapter.filter(newText)
+                }
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 }

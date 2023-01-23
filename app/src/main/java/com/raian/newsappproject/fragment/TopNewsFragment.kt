@@ -2,10 +2,9 @@ package com.raian.newsappproject.fragment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,9 +31,26 @@ class TopNewsFragment : Fragment() {
     var listNews = ArrayList<TempArticle>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_item, menu)
+        val item = menu.findItem(R.id.actionSearch)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
-
-
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    val adapter = recyclerView.adapter as TopNewsAdapter
+                    adapter.filter(newText)
+                }
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onCreateView(
@@ -64,6 +80,7 @@ class TopNewsFragment : Fragment() {
             }
         }
         viewModel.readAllBusinessNews.observe(
+
             viewLifecycleOwner
         ) {
             adapter.setData(it)

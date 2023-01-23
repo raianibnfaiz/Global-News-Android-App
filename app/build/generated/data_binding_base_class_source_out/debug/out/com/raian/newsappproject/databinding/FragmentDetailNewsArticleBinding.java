@@ -31,20 +31,20 @@ public final class FragmentDetailNewsArticleBinding implements ViewBinding {
   public final TextView newsContent;
 
   @NonNull
-  public final TextView newsDescription;
+  public final ImageView newsImage;
 
   @NonNull
-  public final ImageView newsImage;
+  public final TextView tvDescription;
 
   private FragmentDetailNewsArticleBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button continueButton, @NonNull TextView newTitle, @NonNull TextView newsContent,
-      @NonNull TextView newsDescription, @NonNull ImageView newsImage) {
+      @NonNull ImageView newsImage, @NonNull TextView tvDescription) {
     this.rootView = rootView;
     this.continueButton = continueButton;
     this.newTitle = newTitle;
     this.newsContent = newsContent;
-    this.newsDescription = newsDescription;
     this.newsImage = newsImage;
+    this.tvDescription = tvDescription;
   }
 
   @Override
@@ -92,20 +92,20 @@ public final class FragmentDetailNewsArticleBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.newsDescription;
-      TextView newsDescription = ViewBindings.findChildViewById(rootView, id);
-      if (newsDescription == null) {
-        break missingId;
-      }
-
       id = R.id.newsImage;
       ImageView newsImage = ViewBindings.findChildViewById(rootView, id);
       if (newsImage == null) {
         break missingId;
       }
 
+      id = R.id.tv_description;
+      TextView tvDescription = ViewBindings.findChildViewById(rootView, id);
+      if (tvDescription == null) {
+        break missingId;
+      }
+
       return new FragmentDetailNewsArticleBinding((ConstraintLayout) rootView, continueButton,
-          newTitle, newsContent, newsDescription, newsImage);
+          newTitle, newsContent, newsImage, tvDescription);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

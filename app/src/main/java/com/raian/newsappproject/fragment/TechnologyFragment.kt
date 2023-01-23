@@ -2,10 +2,9 @@ package com.raian.newsappproject.fragment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
@@ -34,7 +33,26 @@ class TechnologyFragment : Fragment() {
     var listNews = ArrayList<TempArticle>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_item, menu)
+        val item = menu.findItem(R.id.actionSearch)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    val adapter = recyclerView.adapter as TechnologyAdapter
+                    adapter.filter(newText)
+                }
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onCreateView(
@@ -69,7 +87,7 @@ class TechnologyFragment : Fragment() {
             adapter.setData(it)
 
         }
-        Log.d("home", "list home fragment: ${viewModel.list?.value.toString()}")
+        //Log.d("home", "list home fragment: ${viewModel.list?.value.toString()}")
 
         swapRefresh = view.findViewById(R.id.swipeRefreshLayout)
         swapRefresh.setOnRefreshListener {
@@ -115,6 +133,7 @@ class TechnologyFragment : Fragment() {
         viewModel.readAllTechnologyNews?.observe(
             viewLifecycleOwner
         ) {
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = TechnologyAdapter(
                 requireContext(), viewModel, listNews as ArrayList<TempArticle>
             )

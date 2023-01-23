@@ -4,7 +4,7 @@
             "outputFile": "com.raian.newsappproject.app-mergeDebugResources-49:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\eef7bded536a75a8daba1eb06483c49f\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\BJIT\\.gradle\\caches\\transforms-3\\eef7bded536a75a8daba1eb06483c49f\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\576c9ec5ee13113848524aa6bfc4d74c\\transformed\\appcompat-1.6.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\BJIT\\.gradle\\caches\\transforms-3\\576c9ec5ee13113848524aa6bfc4d74c\\transformed\\appcompat-1.6.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

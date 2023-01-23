@@ -79,6 +79,8 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
         }
     }
 
+
+
     fun getBusinessNews(){
         viewModelScope.launch{
             try {

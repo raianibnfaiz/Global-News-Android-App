@@ -21,23 +21,23 @@ public final class NewslListViewLayoutBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final ImageView imageView;
-
-  @NonNull
-  public final TextView tvDate;
+  public final ImageView ivImage;
 
   @NonNull
   public final TextView tvDescription;
 
   @NonNull
+  public final TextView tvPublishDate;
+
+  @NonNull
   public final TextView tvTitle;
 
-  private NewslListViewLayoutBinding(@NonNull CardView rootView, @NonNull ImageView imageView,
-      @NonNull TextView tvDate, @NonNull TextView tvDescription, @NonNull TextView tvTitle) {
+  private NewslListViewLayoutBinding(@NonNull CardView rootView, @NonNull ImageView ivImage,
+      @NonNull TextView tvDescription, @NonNull TextView tvPublishDate, @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.imageView = imageView;
-    this.tvDate = tvDate;
+    this.ivImage = ivImage;
     this.tvDescription = tvDescription;
+    this.tvPublishDate = tvPublishDate;
     this.tvTitle = tvTitle;
   }
 
@@ -68,15 +68,9 @@ public final class NewslListViewLayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.image_view;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
-        break missingId;
-      }
-
-      id = R.id.tv_date;
-      TextView tvDate = ViewBindings.findChildViewById(rootView, id);
-      if (tvDate == null) {
+      id = R.id.iv_image;
+      ImageView ivImage = ViewBindings.findChildViewById(rootView, id);
+      if (ivImage == null) {
         break missingId;
       }
 
@@ -86,14 +80,20 @@ public final class NewslListViewLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_publishDate;
+      TextView tvPublishDate = ViewBindings.findChildViewById(rootView, id);
+      if (tvPublishDate == null) {
+        break missingId;
+      }
+
       id = R.id.tv_title;
       TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvTitle == null) {
         break missingId;
       }
 
-      return new NewslListViewLayoutBinding((CardView) rootView, imageView, tvDate, tvDescription,
-          tvTitle);
+      return new NewslListViewLayoutBinding((CardView) rootView, ivImage, tvDescription,
+          tvPublishDate, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

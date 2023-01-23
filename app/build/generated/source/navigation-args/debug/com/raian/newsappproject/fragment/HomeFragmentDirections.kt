@@ -11,10 +11,10 @@ import kotlin.Int
 import kotlin.Suppress
 
 public class HomeFragmentDirections private constructor() {
-  private data class ActionHomeFragment2ToDetailNewsArticleFragment22(
+  private data class ActionHomeFragment2ToDetailNewsArticleFragment(
     public val details: TempArticle
   ) : NavDirections {
-    public override val actionId: Int = R.id.action_homeFragment2_to_detailNewsArticleFragment22
+    public override val actionId: Int = R.id.action_homeFragment2_to_detailNewsArticleFragment
 
     public override val arguments: Bundle
       @Suppress("CAST_NEVER_SUCCEEDS")
@@ -33,7 +33,7 @@ public class HomeFragmentDirections private constructor() {
   }
 
   public companion object {
-    public fun actionHomeFragment2ToDetailNewsArticleFragment22(details: TempArticle): NavDirections
-        = ActionHomeFragment2ToDetailNewsArticleFragment22(details)
+    public fun actionHomeFragment2ToDetailNewsArticleFragment(details: TempArticle): NavDirections =
+        ActionHomeFragment2ToDetailNewsArticleFragment(details)
   }
 }

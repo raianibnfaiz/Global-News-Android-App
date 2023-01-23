@@ -11,7 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.raian.newsappproject.R
-import com.squareup.picasso.Picasso
 
 class DetailBookmarkNewsFragment : Fragment() {
     val args: DetailBookmarkNewsFragmentArgs by navArgs()
@@ -32,7 +31,7 @@ class DetailBookmarkNewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val title = view.findViewById<TextView>(R.id.newTitle)
-        val description = view.findViewById<TextView>(R.id.newsDescription)
+        val description = view.findViewById<TextView>(R.id.tv_description)
         val content = view.findViewById<TextView>(R.id.newsContent)
         val imageView = view.findViewById<ImageView>(R.id.newsImage)
         val continueButton = view.findViewById<Button>(R.id.continueButton)

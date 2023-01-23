@@ -10,7 +10,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.navigation.fragment.navArgs
 import com.raian.newsappproject.R
-import com.raian.newsappproject.WebPageViewFragmentArgs
 import com.raian.newsappproject.databinding.FragmentWebPageViewBinding
 
 class WebPageViewFragment : Fragment() {

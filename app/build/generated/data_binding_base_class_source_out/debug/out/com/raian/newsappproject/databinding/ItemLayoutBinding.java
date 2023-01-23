@@ -5,11 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.raian.newsappproject.R;
@@ -22,13 +23,16 @@ public final class ItemLayoutBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final CardView cvCardView;
+  public final LinearLayout authorAndDate;
+
+  @NonNull
+  public final CardView cardViewNews;
+
+  @NonNull
+  public final ConstraintLayout details;
 
   @NonNull
   public final ImageView ivImage;
-
-  @NonNull
-  public final RelativeLayout rlWrapper;
 
   @NonNull
   public final TextView tvAuthor;
@@ -42,13 +46,15 @@ public final class ItemLayoutBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ItemLayoutBinding(@NonNull CardView rootView, @NonNull CardView cvCardView,
-      @NonNull ImageView ivImage, @NonNull RelativeLayout rlWrapper, @NonNull TextView tvAuthor,
-      @NonNull TextView tvDescription, @NonNull TextView tvPublishDate, @NonNull TextView tvTitle) {
+  private ItemLayoutBinding(@NonNull CardView rootView, @NonNull LinearLayout authorAndDate,
+      @NonNull CardView cardViewNews, @NonNull ConstraintLayout details, @NonNull ImageView ivImage,
+      @NonNull TextView tvAuthor, @NonNull TextView tvDescription, @NonNull TextView tvPublishDate,
+      @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.cvCardView = cvCardView;
+    this.authorAndDate = authorAndDate;
+    this.cardViewNews = cardViewNews;
+    this.details = details;
     this.ivImage = ivImage;
-    this.rlWrapper = rlWrapper;
     this.tvAuthor = tvAuthor;
     this.tvDescription = tvDescription;
     this.tvPublishDate = tvPublishDate;
@@ -82,17 +88,23 @@ public final class ItemLayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      CardView cvCardView = (CardView) rootView;
+      id = R.id.authorAndDate;
+      LinearLayout authorAndDate = ViewBindings.findChildViewById(rootView, id);
+      if (authorAndDate == null) {
+        break missingId;
+      }
+
+      CardView cardViewNews = (CardView) rootView;
+
+      id = R.id.details;
+      ConstraintLayout details = ViewBindings.findChildViewById(rootView, id);
+      if (details == null) {
+        break missingId;
+      }
 
       id = R.id.iv_image;
       ImageView ivImage = ViewBindings.findChildViewById(rootView, id);
       if (ivImage == null) {
-        break missingId;
-      }
-
-      id = R.id.rl_wrapper;
-      RelativeLayout rlWrapper = ViewBindings.findChildViewById(rootView, id);
-      if (rlWrapper == null) {
         break missingId;
       }
 
@@ -120,8 +132,8 @@ public final class ItemLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemLayoutBinding((CardView) rootView, cvCardView, ivImage, rlWrapper, tvAuthor,
-          tvDescription, tvPublishDate, tvTitle);
+      return new ItemLayoutBinding((CardView) rootView, authorAndDate, cardViewNews, details,
+          ivImage, tvAuthor, tvDescription, tvPublishDate, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

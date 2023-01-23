@@ -7,22 +7,21 @@ import kotlin.Int
 import kotlin.String
 
 public class DetailNewsArticleFragmentDirections private constructor() {
-  private data class ActionDetailNewsArticleFragment2ToWebPageViewFragment(
+  private data class ActionDetailNewsArticleFragmentToWebPageViewFragment(
     public val newsUrl: String
   ) : NavDirections {
-    public override val actionId: Int =
-        R.id.action_detailNewsArticleFragment2_to_webPageViewFragment
+    public override val actionId: Int = R.id.action_detailNewsArticleFragment_to_webPageViewFragment
 
     public override val arguments: Bundle
       get() {
         val result = Bundle()
-        result.putString("news_url", this.newsUrl)
+        result.putString("newsUrl", this.newsUrl)
         return result
       }
   }
 
   public companion object {
-    public fun actionDetailNewsArticleFragment2ToWebPageViewFragment(newsUrl: String): NavDirections
-        = ActionDetailNewsArticleFragment2ToWebPageViewFragment(newsUrl)
+    public fun actionDetailNewsArticleFragmentToWebPageViewFragment(newsUrl: String): NavDirections
+        = ActionDetailNewsArticleFragmentToWebPageViewFragment(newsUrl)
   }
 }

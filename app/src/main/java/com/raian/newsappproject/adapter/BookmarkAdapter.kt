@@ -33,7 +33,7 @@ class BookmarkAdapter(private val context: Context,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val root = LayoutInflater.from(parent.context).inflate(R.layout.new_item_layout, parent, false)
+        val root = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
         return ItemViewHolder(root)
     }
 
