@@ -26,9 +26,9 @@ import kotlin.collections.ArrayList
 class TopNewsAdapter(
     private val context: Context,
     private val viewModel: NewsViewModel,
-    private val arrayList: ArrayList<TempArticle>
+    private val arrayList: List<TempArticle>
 ) : RecyclerView.Adapter<TopNewsAdapter.NewsViewHolder>() {
-    private var theNewsList = viewModel.readAllBusinessNews.value
+    private var theNewsList = arrayList
 
     class NewsViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
 
@@ -49,7 +49,7 @@ class TopNewsAdapter(
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        val currentData = theNewsList?.get(position)
+        val currentData = theNewsList[position]
         //val item = arrayList[position]
         if (!TextUtils.isEmpty(currentData?.title)) {
             holder.itemTitle.text = currentData?.title

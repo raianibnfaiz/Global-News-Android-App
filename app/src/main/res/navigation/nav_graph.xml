@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment2"
         android:name="com.raian.newsappproject.fragment.HomeFragment"
-        android:label="fragment_home"
+        android:label="News Home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment2_to_detailNewsArticleFragment"
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/bookmarkFragment2"
         android:name="com.raian.newsappproject.fragment.BookmarkFragment"
-        android:label="fragment_bookmark"
+        android:label="Bookmarked News"
         tools:layout="@layout/fragment_bookmark" >
         <action
             android:id="@+id/action_bookmarkFragment2_to_detailBookmarkNewsFragment"
@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/detailNewsArticleFragment"
         android:name="com.raian.newsappproject.fragment.DetailNewsArticleFragment"
-        android:label="fragment_detail_news_article"
+        android:label="News Detail"
         tools:layout="@layout/fragment_detail_news_article" >
         <argument
             android:name="details"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/webPageViewFragment"
         android:name="com.raian.newsappproject.fragment.WebPageViewFragment"
-        android:label="fragment_web_page_view"
+        android:label="Live News"
         tools:layout="@layout/fragment_web_page_view" >
         <argument
             android:name="newsUrl"
@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/detailBookmarkNewsFragment"
         android:name="com.raian.newsappproject.fragment.DetailBookmarkNewsFragment"
-        android:label="fragment_detail_bookmark_news"
+        android:label="Bookmarked Article Detail"
         tools:layout="@layout/fragment_detail_bookmark_news" >
         <argument
             android:name="detailBookmark"

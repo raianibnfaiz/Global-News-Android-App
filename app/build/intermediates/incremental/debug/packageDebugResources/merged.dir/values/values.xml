@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black_light">#4a4645</color>
-    <color name="primaryColor">#A97FF1</color>
+    <color name="primaryColor">#1D1827</color>
     <color name="primaryDarkColor">#171222</color>
     <color name="primaryLightColor">#fff2ff</color>
     <color name="primaryTextColor">#000000</color>
@@ -22,7 +22,7 @@
         <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
         
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
         
     </style>
 </resources>
