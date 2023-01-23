@@ -167,7 +167,7 @@ class TopNewsAdapter(
 
     fun filter(text: String) {
         val filteredList = ArrayList<TempArticle>()
-        for (article in theNewsList!!) {
+        for (article in theNewsList) {
             if (article.title?.lowercase(Locale.ROOT)
                     ?.contains(text.lowercase(Locale.ROOT)) == true
             ) {

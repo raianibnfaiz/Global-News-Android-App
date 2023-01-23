@@ -77,6 +77,7 @@ class SportsFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
         inflater.inflate(R.menu.menu_item, menu)
         val item = menu.findItem(R.id.actionSearch)
         val searchView = item?.actionView as SearchView
