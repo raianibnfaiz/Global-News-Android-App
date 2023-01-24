@@ -48,6 +48,7 @@ id nav_view
 id newTitle
 id newsContent
 id newsImage
+id newsSource
 id photos_grid
 id rv_recyclerView
 id settingsFragment

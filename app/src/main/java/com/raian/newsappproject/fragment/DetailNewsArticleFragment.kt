@@ -36,6 +36,7 @@ class DetailNewsArticleFragment : Fragment() {
         val description = view.findViewById<TextView>(R.id.tv_description)
         val content = view.findViewById<TextView>(R.id.newsContent)
         val imageView = view.findViewById<ImageView>(R.id.newsImage)
+        val sourceNews = view.findViewById<TextView>(R.id.newsSource)
         val continueButton = view.findViewById<Button>(R.id.continueButton)
 
         if (!TextUtils.isEmpty(args.details?.title)) {
@@ -54,6 +55,11 @@ class DetailNewsArticleFragment : Fragment() {
             content.text = args.details?.content
         }  else {
             content.text = "No Content"
+        }
+        if (!TextUtils.isEmpty(args.details?.source?.name)) {
+            sourceNews.text = args.details?.source?.name
+        }  else {
+            sourceNews.text = "Source Not Available"
         }
 
         if (!TextUtils.isEmpty(args.details?.urlToImage)) {

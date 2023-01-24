@@ -36,6 +36,7 @@ class DetailBookmarkNewsFragment : Fragment() {
         val description = view.findViewById<TextView>(R.id.tv_description)
         val content = view.findViewById<TextView>(R.id.newsContent)
         val imageView = view.findViewById<ImageView>(R.id.newsImage)
+        val sourceNews = view.findViewById<TextView>(R.id.newsSource)
         val continueButton = view.findViewById<Button>(R.id.continueButton)
 
         if (!TextUtils.isEmpty(args.detailBookmark?.title)) {
@@ -54,6 +55,11 @@ class DetailBookmarkNewsFragment : Fragment() {
             content.text = args.detailBookmark?.content
         }  else {
             content.text = "No Content"
+        }
+        if (!TextUtils.isEmpty(args.detailBookmark?.source?.name)) {
+            sourceNews.text = args.detailBookmark?.source?.name
+        }  else {
+            sourceNews.text = "Source Not Available"
         }
 
         if (!TextUtils.isEmpty(args.detailBookmark?.urlToImage)) {

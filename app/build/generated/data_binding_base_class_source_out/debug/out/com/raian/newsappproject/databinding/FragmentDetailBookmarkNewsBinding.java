@@ -34,16 +34,20 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
   public final ImageView newsImage;
 
   @NonNull
+  public final TextView newsSource;
+
+  @NonNull
   public final TextView tvDescription;
 
   private FragmentDetailBookmarkNewsBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button continueButton, @NonNull TextView newTitle, @NonNull TextView newsContent,
-      @NonNull ImageView newsImage, @NonNull TextView tvDescription) {
+      @NonNull ImageView newsImage, @NonNull TextView newsSource, @NonNull TextView tvDescription) {
     this.rootView = rootView;
     this.continueButton = continueButton;
     this.newTitle = newTitle;
     this.newsContent = newsContent;
     this.newsImage = newsImage;
+    this.newsSource = newsSource;
     this.tvDescription = tvDescription;
   }
 
@@ -98,6 +102,12 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.newsSource;
+      TextView newsSource = ViewBindings.findChildViewById(rootView, id);
+      if (newsSource == null) {
+        break missingId;
+      }
+
       id = R.id.tv_description;
       TextView tvDescription = ViewBindings.findChildViewById(rootView, id);
       if (tvDescription == null) {
@@ -105,7 +115,7 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
       }
 
       return new FragmentDetailBookmarkNewsBinding((ConstraintLayout) rootView, continueButton,
-          newTitle, newsContent, newsImage, tvDescription);
+          newTitle, newsContent, newsImage, newsSource, tvDescription);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

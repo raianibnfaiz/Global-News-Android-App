@@ -15,21 +15,25 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequest
+import androidx.work.WorkManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.raian.newsappproject.databinding.ActivityMainBinding
 import com.raian.newsappproject.fragment.BookmarkFragment
 import com.raian.newsappproject.fragment.HomeFragment
+import com.raian.newsappproject.worker.FetchingDataWorker
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    //private val internetPermissionCode = 100
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //checkPermission()
+        setPeriodicWorkRequest()
         val navView: BottomNavigationView = binding.navView
         navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
@@ -43,17 +47,19 @@ class MainActivity : AppCompatActivity(){
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-//    private fun checkPermission() {
-//        if (ContextCompat.checkSelfPermission(
-//                this, Manifest.permission.INTERNET
-//            ) == PackageManager.PERMISSION_DENIED
-//        ) {
-//            ActivityCompat.requestPermissions(
-//                this, arrayOf(Manifest.permission.INTERNET), internetPermissionCode
-//            )
-//        } else {
-//
-//        }
-//    }
+    private fun setPeriodicWorkRequest() {
+        val workManager = WorkManager.getInstance(applicationContext)
+        val dataLoad =
+            PeriodicWorkRequest
+                .Builder(FetchingDataWorker::class.java, 300, TimeUnit.MINUTES)
+                .setInitialDelay(1, TimeUnit.MINUTES)
+                .addTag("apiCall")
+                .build()
+        workManager.enqueueUniquePeriodicWork(
+            "apiCall",
+            ExistingPeriodicWorkPolicy.REPLACE,
+            dataLoad
+        )
+    }
 
 }

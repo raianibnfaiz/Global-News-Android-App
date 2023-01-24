@@ -28,27 +28,30 @@ com.raian.newsappproject.app-navigation-ui-2.5.3-26 C:\Users\BJIT\.gradle\caches
 com.raian.newsappproject.app-lifecycle-viewmodel-savedstate-2.5.1-27 C:\Users\BJIT\.gradle\caches\transforms-3\95a7a40047786bd80c81367f2f5370eb\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
 com.raian.newsappproject.app-swiperefreshlayout-1.1.0-28 C:\Users\BJIT\.gradle\caches\transforms-3\9e4747bd83b007cbc046023ff0c0f8b0\transformed\swiperefreshlayout-1.1.0\res
 com.raian.newsappproject.app-navigation-fragment-2.5.3-29 C:\Users\BJIT\.gradle\caches\transforms-3\a1ea4af624e8965f6097c64ce56c7674\transformed\navigation-fragment-2.5.3\res
-com.raian.newsappproject.app-lifecycle-livedata-core-ktx-2.5.1-30 C:\Users\BJIT\.gradle\caches\transforms-3\ac557fe98d863dbb0a09f8104b89f111\transformed\lifecycle-livedata-core-ktx-2.5.1\res
-com.raian.newsappproject.app-activity-ktx-1.6.0-31 C:\Users\BJIT\.gradle\caches\transforms-3\ade57bdf2edfa749a706dce7843c0b2d\transformed\activity-ktx-1.6.0\res
-com.raian.newsappproject.app-savedstate-ktx-1.2.0-32 C:\Users\BJIT\.gradle\caches\transforms-3\c17853147a96e780848321b50b7c2cfc\transformed\savedstate-ktx-1.2.0\res
-com.raian.newsappproject.app-navigation-common-2.5.3-33 C:\Users\BJIT\.gradle\caches\transforms-3\c1fd0d2a1462157d45fad4deddda6d15\transformed\navigation-common-2.5.3\res
-com.raian.newsappproject.app-viewpager2-1.0.0-34 C:\Users\BJIT\.gradle\caches\transforms-3\c261b927626344fa5c299041aca66c01\transformed\viewpager2-1.0.0\res
-com.raian.newsappproject.app-room-ktx-2.5.0-35 C:\Users\BJIT\.gradle\caches\transforms-3\c9d1bd89312085085f06f7ffd924be04\transformed\room-ktx-2.5.0\res
-com.raian.newsappproject.app-core-ktx-1.9.0-36 C:\Users\BJIT\.gradle\caches\transforms-3\d1d481d43fb1d4f60e6fffc32c72bf36\transformed\core-ktx-1.9.0\res
-com.raian.newsappproject.app-sqlite-2.3.0-37 C:\Users\BJIT\.gradle\caches\transforms-3\d2c1a81b5bd04381c6b0dceb941ccd23\transformed\sqlite-2.3.0\res
-com.raian.newsappproject.app-cardview-1.0.0-38 C:\Users\BJIT\.gradle\caches\transforms-3\db9d60f87c81e1c628f5e40b106ec96b\transformed\cardview-1.0.0\res
-com.raian.newsappproject.app-annotation-experimental-1.3.0-39 C:\Users\BJIT\.gradle\caches\transforms-3\e3dc5da8982917a8877887f4304959db\transformed\annotation-experimental-1.3.0\res
-com.raian.newsappproject.app-lifecycle-process-2.4.1-40 C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\res
-com.raian.newsappproject.app-navigation-fragment-ktx-2.5.3-41 C:\Users\BJIT\.gradle\caches\transforms-3\e5cc213b03651236267f86e3237bdff7\transformed\navigation-fragment-ktx-2.5.3\res
-com.raian.newsappproject.app-glide-4.11.0-42 C:\Users\BJIT\.gradle\caches\transforms-3\e801ce045466a6ae6d867ccdac15b1ba\transformed\glide-4.11.0\res
-com.raian.newsappproject.app-lifecycle-viewmodel-ktx-2.5.1-43 C:\Users\BJIT\.gradle\caches\transforms-3\e97de3a09a37a1cedf9c3974152edc88\transformed\lifecycle-viewmodel-ktx-2.5.1\res
-com.raian.newsappproject.app-core-1.9.0-44 C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\res
-com.raian.newsappproject.app-lifecycle-runtime-2.5.1-45 C:\Users\BJIT\.gradle\caches\transforms-3\f4c8cd0ae4ca0dc3b52cf8e6e7401073\transformed\lifecycle-runtime-2.5.1\res
-com.raian.newsappproject.app-pngs-46 D:\androidStudio\NewsAppProject\app\build\generated\res\pngs\debug
-com.raian.newsappproject.app-resValues-47 D:\androidStudio\NewsAppProject\app\build\generated\res\resValues\debug
-com.raian.newsappproject.app-rs-48 D:\androidStudio\NewsAppProject\app\build\generated\res\rs\debug
-com.raian.newsappproject.app-packageDebugResources-49 D:\androidStudio\NewsAppProject\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.raian.newsappproject.app-packageDebugResources-50 D:\androidStudio\NewsAppProject\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.raian.newsappproject.app-merged_res-51 D:\androidStudio\NewsAppProject\app\build\intermediates\merged_res\debug
-com.raian.newsappproject.app-debug-52 D:\androidStudio\NewsAppProject\app\src\debug\res
-com.raian.newsappproject.app-main-53 D:\androidStudio\NewsAppProject\app\src\main\res
+com.raian.newsappproject.app-hilt-work-1.0.0-30 C:\Users\BJIT\.gradle\caches\transforms-3\aafad0ad17ceb777e4febacc4fd49c65\transformed\hilt-work-1.0.0\res
+com.raian.newsappproject.app-lifecycle-livedata-core-ktx-2.5.1-31 C:\Users\BJIT\.gradle\caches\transforms-3\ac557fe98d863dbb0a09f8104b89f111\transformed\lifecycle-livedata-core-ktx-2.5.1\res
+com.raian.newsappproject.app-activity-ktx-1.6.0-32 C:\Users\BJIT\.gradle\caches\transforms-3\ade57bdf2edfa749a706dce7843c0b2d\transformed\activity-ktx-1.6.0\res
+com.raian.newsappproject.app-work-runtime-2.7.1-33 C:\Users\BJIT\.gradle\caches\transforms-3\be01088d2e2cea16f4cecb053cc782e4\transformed\work-runtime-2.7.1\res
+com.raian.newsappproject.app-savedstate-ktx-1.2.0-34 C:\Users\BJIT\.gradle\caches\transforms-3\c17853147a96e780848321b50b7c2cfc\transformed\savedstate-ktx-1.2.0\res
+com.raian.newsappproject.app-navigation-common-2.5.3-35 C:\Users\BJIT\.gradle\caches\transforms-3\c1fd0d2a1462157d45fad4deddda6d15\transformed\navigation-common-2.5.3\res
+com.raian.newsappproject.app-viewpager2-1.0.0-36 C:\Users\BJIT\.gradle\caches\transforms-3\c261b927626344fa5c299041aca66c01\transformed\viewpager2-1.0.0\res
+com.raian.newsappproject.app-room-ktx-2.5.0-37 C:\Users\BJIT\.gradle\caches\transforms-3\c9d1bd89312085085f06f7ffd924be04\transformed\room-ktx-2.5.0\res
+com.raian.newsappproject.app-core-ktx-1.9.0-38 C:\Users\BJIT\.gradle\caches\transforms-3\d1d481d43fb1d4f60e6fffc32c72bf36\transformed\core-ktx-1.9.0\res
+com.raian.newsappproject.app-sqlite-2.3.0-39 C:\Users\BJIT\.gradle\caches\transforms-3\d2c1a81b5bd04381c6b0dceb941ccd23\transformed\sqlite-2.3.0\res
+com.raian.newsappproject.app-cardview-1.0.0-40 C:\Users\BJIT\.gradle\caches\transforms-3\db9d60f87c81e1c628f5e40b106ec96b\transformed\cardview-1.0.0\res
+com.raian.newsappproject.app-annotation-experimental-1.3.0-41 C:\Users\BJIT\.gradle\caches\transforms-3\e3dc5da8982917a8877887f4304959db\transformed\annotation-experimental-1.3.0\res
+com.raian.newsappproject.app-lifecycle-process-2.4.1-42 C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\res
+com.raian.newsappproject.app-navigation-fragment-ktx-2.5.3-43 C:\Users\BJIT\.gradle\caches\transforms-3\e5cc213b03651236267f86e3237bdff7\transformed\navigation-fragment-ktx-2.5.3\res
+com.raian.newsappproject.app-glide-4.11.0-44 C:\Users\BJIT\.gradle\caches\transforms-3\e801ce045466a6ae6d867ccdac15b1ba\transformed\glide-4.11.0\res
+com.raian.newsappproject.app-work-runtime-ktx-2.7.1-45 C:\Users\BJIT\.gradle\caches\transforms-3\e922b84e274faf65bad227c800734b58\transformed\work-runtime-ktx-2.7.1\res
+com.raian.newsappproject.app-lifecycle-viewmodel-ktx-2.5.1-46 C:\Users\BJIT\.gradle\caches\transforms-3\e97de3a09a37a1cedf9c3974152edc88\transformed\lifecycle-viewmodel-ktx-2.5.1\res
+com.raian.newsappproject.app-core-1.9.0-47 C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\res
+com.raian.newsappproject.app-lifecycle-runtime-2.5.1-48 C:\Users\BJIT\.gradle\caches\transforms-3\f4c8cd0ae4ca0dc3b52cf8e6e7401073\transformed\lifecycle-runtime-2.5.1\res
+com.raian.newsappproject.app-pngs-49 C:\midterm bjit\News-Api-App-\app\build\generated\res\pngs\debug
+com.raian.newsappproject.app-resValues-50 C:\midterm bjit\News-Api-App-\app\build\generated\res\resValues\debug
+com.raian.newsappproject.app-rs-51 C:\midterm bjit\News-Api-App-\app\build\generated\res\rs\debug
+com.raian.newsappproject.app-packageDebugResources-52 C:\midterm bjit\News-Api-App-\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.raian.newsappproject.app-packageDebugResources-53 C:\midterm bjit\News-Api-App-\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.raian.newsappproject.app-merged_res-54 C:\midterm bjit\News-Api-App-\app\build\intermediates\merged_res\debug
+com.raian.newsappproject.app-debug-55 C:\midterm bjit\News-Api-App-\app\src\debug\res
+com.raian.newsappproject.app-main-56 C:\midterm bjit\News-Api-App-\app\src\main\res

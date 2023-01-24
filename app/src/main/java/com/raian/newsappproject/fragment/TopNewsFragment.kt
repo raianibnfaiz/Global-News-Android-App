@@ -19,9 +19,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
+lateinit var viewModel: NewsViewModel
 class TopNewsFragment : Fragment() {
-    private lateinit var viewModel: NewsViewModel
     private lateinit var swapRefresh: SwipeRefreshLayout
     private lateinit var recyclerView: RecyclerView
     lateinit var repository: NewsRepository
@@ -99,6 +98,7 @@ class TopNewsFragment : Fragment() {
 
 
     }
-
-
+}
+fun autoReload() {
+    viewModel.readAllBusinessNews
 }
