@@ -1,24 +1,19 @@
 package com.raian.newsappproject.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.raian.newsappproject.R
 import com.raian.newsappproject.Repository.NewsRepository
-import com.raian.newsappproject.adapter.ScienceAdapter
-import com.raian.newsappproject.adapter.TechnologyAdapter
+import com.raian.newsappproject.adapter.NewsAdapter
 import com.raian.newsappproject.db.NewsDatabase
-import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.models.TempArticle
-import com.raian.newsappproject.network.NewsApi
 import com.raian.newsappproject.viewModel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,7 +42,7 @@ class TechnologyFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText != null) {
-                    val adapter = recyclerView.adapter as TechnologyAdapter
+                    val adapter = recyclerView.adapter as NewsAdapter
                     adapter.filter(newText)
                 }
                 return false
@@ -72,7 +67,7 @@ class TechnologyFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rv_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
-        val adapter = TechnologyAdapter(
+        val adapter = NewsAdapter(
             requireContext(), viewModel, listNews as ArrayList<TempArticle>
         )
         recyclerView.adapter = adapter
@@ -88,7 +83,6 @@ class TechnologyFragment : Fragment() {
             adapter.setData(it)
 
         }
-        //Log.d("home", "list home fragment: ${viewModel.list?.value.toString()}")
 
         swapRefresh = view.findViewById(R.id.swipeRefreshLayout)
         swapRefresh.setOnRefreshListener {
@@ -105,41 +99,5 @@ class TechnologyFragment : Fragment() {
         }
     }
 
-    fun setTechnologyArticle() {
-//        viewModel.deleteArticle()
-        viewModel.technologyList.observe(viewLifecycleOwner) { article ->
-            article.map {
-                it?.let { it1 ->
-                    TempArticle(
-                        0,
-                        it.author,
-                        it.content,
-                        it.description,
-                        it.publishedAt,
-                        it.source,
-                        it.title,
-                        "technology",
-                        it.url,
-                        it.urlToImage,
-                        true
-                    )
-                }?.let { it2 ->
-                    listNews.add(
-                        it2
-                    )
-                }
-            }
-            viewModel.addAllArticle(listNews)
-        }
-        viewModel.readAllTechnologyNews?.observe(
-            viewLifecycleOwner
-        ) {
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.adapter = TechnologyAdapter(
-                requireContext(), viewModel, listNews as ArrayList<TempArticle>
-            )
-        }
-
-    }
 }
 

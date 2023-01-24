@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.raian.newsappproject.R
+import com.squareup.picasso.Picasso
 
 class DetailBookmarkNewsFragment : Fragment() {
     val args: DetailBookmarkNewsFragmentArgs by navArgs()
@@ -42,36 +44,45 @@ class DetailBookmarkNewsFragment : Fragment() {
             title.text = "No Name"
         }
 
-//        if (!TextUtils.isEmpty(args.detailBookmark?.description)) {
-//            description.text = args.detailBookmark?.description
-//        }  else {
-//            description.text = "No Description"
-//        }
-//
-//        if (!TextUtils.isEmpty(args.detailBookmark?.content)) {
-//            content.text = args.detailBookmark?.content
-//        }  else {
-//            content.text = "No Content"
-//        }
-//
-//        if (!TextUtils.isEmpty(args.detailBookmark?.urlToImage)) {
-//            Picasso.get()
-//                .load(args.detailBookmark?.urlToImage)
-//                .placeholder(R.drawable.ic_connection_error)
-//                .fit()
-//                .centerCrop()
-//                .centerCrop(1)
-//                .into(imageView)
-//        }  else {
-//            Picasso.get()
-//                .load(R.drawable.ic_connection_error)
-//                .placeholder(R.drawable.ic_connection_error)
-//                .fit()
-//                .centerCrop()
-//                .centerCrop(1)
-//                .into(imageView)
-//        }
+        if (!TextUtils.isEmpty(args.detailBookmark?.description)) {
+            description.text = args.detailBookmark?.description
+        }  else {
+            description.text = "No Description"
+        }
 
+        if (!TextUtils.isEmpty(args.detailBookmark?.content)) {
+            content.text = args.detailBookmark?.content
+        }  else {
+            content.text = "No Content"
+        }
+
+        if (!TextUtils.isEmpty(args.detailBookmark?.urlToImage)) {
+            Picasso.get()
+                .load(args.detailBookmark?.urlToImage)
+                .placeholder(R.drawable.ic_connection_error)
+                .fit()
+                .centerCrop()
+                .centerCrop(1)
+                .into(imageView)
+        }  else {
+            Picasso.get()
+                .load(R.drawable.ic_connection_error)
+                .placeholder(R.drawable.ic_connection_error)
+                .fit()
+                .centerCrop()
+                .centerCrop(1)
+                .into(imageView)
+        }
+        continueButton.setOnClickListener {
+            val action = args.detailBookmark.url?.let { it1 ->
+                DetailBookmarkNewsFragmentDirections.actionDetailBookmarkNewsFragmentToWebPageViewFragment(
+                    it1
+                )
+            }
+            if (action != null) {
+                Navigation.findNavController(view).navigate(action)
+            }
+        }
     }
 
 

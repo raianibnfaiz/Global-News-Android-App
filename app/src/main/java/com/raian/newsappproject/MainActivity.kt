@@ -24,10 +24,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    //private val internetPermissionCode = 100
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //checkPermission()
         val navView: BottomNavigationView = binding.navView
         navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
@@ -41,6 +43,17 @@ class MainActivity : AppCompatActivity(){
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-
+//    private fun checkPermission() {
+//        if (ContextCompat.checkSelfPermission(
+//                this, Manifest.permission.INTERNET
+//            ) == PackageManager.PERMISSION_DENIED
+//        ) {
+//            ActivityCompat.requestPermissions(
+//                this, arrayOf(Manifest.permission.INTERNET), internetPermissionCode
+//            )
+//        } else {
+//
+//        }
+//    }
 
 }

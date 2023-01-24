@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -54,23 +53,20 @@ class BookmarkFragment : Fragment() {
         recyclerView = view.findViewById(R.id.photos_grid)
         refreshLayout = view.findViewById(R.id.swipeLayout)
         recyclerView.setHasFixedSize(true)
-        recyclerView.isDrawingCacheEnabled = true
-        recyclerView.setItemViewCacheSize(900)
-        initializeAdapter()
-
+        initializingAdapter()
         refreshLayout.setOnRefreshListener {
-            initializeAdapter()
+            initializingAdapter()
             refreshLayout.isRefreshing = false
         }
     }
 
-    private fun initializeAdapter() {
+    private fun initializingAdapter() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.visibility = View.VISIBLE
-        observeData()
+        dataObservation()
     }
 
-    private fun observeData() {
+    private fun dataObservation() {
         viewModel.bookMarkNews.observe(viewLifecycleOwner) {
             recyclerView.adapter = BookmarkAdapter(
                 requireContext(), viewModel, it as ArrayList<Bookmark>

@@ -51,5 +51,8 @@
         <argument
             android:name="detailBookmark"
             app:argType="com.raian.newsappproject.models.Bookmark" />
+        <action
+            android:id="@+id/action_detailBookmarkNewsFragment_to_webPageViewFragment"
+            app:destination="@id/webPageViewFragment" />
     </fragment>
 </navigation>

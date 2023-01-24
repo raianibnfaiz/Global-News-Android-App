@@ -48,6 +48,10 @@ class NewsRepository(private val newsDao: NewsDao) {
         newsDao.deleteTopNews()
     }
 
+    suspend fun updateArticle(article: TempArticle) {
+        newsDao.update(article)
+    }
+
     //FOR BOOKMARK FUNCTIONALITY
 
     suspend fun insertBookMarkArticle(article: Bookmark) {
@@ -57,7 +61,9 @@ class NewsRepository(private val newsDao: NewsDao) {
     fun getAllBookMarkNews(): LiveData<List<Bookmark>> {
         return newsDao.getAllBookMark()
     }
-
+    suspend fun deleteBookMarKArticle(bookMarkNews: Bookmark) {
+        newsDao.deleteBookMarKArticle(bookMarkNews)
+    }
 
     suspend fun deleteUser(article: TempArticle) {
         newsDao.delete(article)
@@ -69,7 +75,7 @@ class NewsRepository(private val newsDao: NewsDao) {
 
 
     suspend fun refresh() {
-        deleteTechnology()
+//        deleteTechnology()
 
         val response = NewsApi.retrofitService.getTechnology()
         val adjust = adjustArticleModel(response.articles, "technology")
@@ -79,7 +85,7 @@ class NewsRepository(private val newsDao: NewsDao) {
     }
 
     suspend fun refreshSportsTab() {
-        deleteSports()
+//        deleteSports()
 
         val response = NewsApi.retrofitService.getSports()
         val adjust = adjustArticleModel(response.articles, "sports")
@@ -89,7 +95,7 @@ class NewsRepository(private val newsDao: NewsDao) {
     }
 
     suspend fun refreshScienceTab() {
-        deleteScience()
+//        deleteScience()
 
         val response = NewsApi.retrofitService.getScience()
         val adjust = adjustArticleModel(response.articles, "science")
@@ -99,7 +105,7 @@ class NewsRepository(private val newsDao: NewsDao) {
     }
 
     suspend fun refreshTopNewsTab() {
-        deleteTopNews()
+//        deleteTopNews()
 
         val response = NewsApi.retrofitService.getBusiness()
         val adjust = adjustArticleModel(response.articles, "business")
@@ -111,7 +117,6 @@ class NewsRepository(private val newsDao: NewsDao) {
     fun adjustArticleModel(articles: List<Article>, category: String): List<TempArticle> {
         return articles.map { article ->
             TempArticle(
-                0,
                 article.author,
                 article.content,
                 article.description,

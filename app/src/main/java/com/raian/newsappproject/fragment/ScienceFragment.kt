@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.raian.newsappproject.R
 import com.raian.newsappproject.Repository.NewsRepository
-import com.raian.newsappproject.adapter.ScienceAdapter
+import com.raian.newsappproject.adapter.NewsAdapter
 import com.raian.newsappproject.db.NewsDatabase
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
@@ -46,7 +46,7 @@ class ScienceFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rv_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
-        val adapter = ScienceAdapter(
+        val adapter = NewsAdapter(
             requireContext(), viewModel, listNews
         )
         recyclerView.adapter = adapter
@@ -89,7 +89,7 @@ class ScienceFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText != null) {
-                    val adapter = recyclerView.adapter as ScienceAdapter
+                    val adapter = recyclerView.adapter as NewsAdapter
                     adapter.filter(newText)
                 }
                 return false

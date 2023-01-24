@@ -13,119 +13,116 @@
 11    <uses-permission android:name="android.permission.INTERNET" />
 11-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:4:5-67
 11-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:4:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:5:5-79
-12-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:5:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-15        android:name="com.raian.newsappproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.raian.newsappproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-19
-20    <application
-20-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:6:5-29:19
-21        android:allowBackup="true"
-21-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:7:9-35
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:8:9-65
-24        android:debuggable="true"
-25        android:fullBackupContent="@xml/backup_rules"
-25-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:9:9-54
-26        android:icon="@mipmap/ic_launcher"
-26-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:10:9-43
-27        android:label="@string/app_name"
-27-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:11:9-41
-28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:12:9-54
-29        android:supportsRtl="true"
-29-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:13:9-35
-30        android:testOnly="true"
-31        android:theme="@style/Theme.NewsAppProject" >
-31-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:14:9-52
-32        <activity
-32-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:16:9-28:20
-33            android:name="com.raian.newsappproject.MainActivity"
-33-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:17:13-41
-34            android:exported="true" >
-34-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:18:13-36
-35            <intent-filter>
-35-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:19:13-23:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:20:17-69
-36-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:20:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:22:17-77
-38-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:22:27-74
-39            </intent-filter>
-40
-41            <meta-data
-41-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:25:13-27:36
-42                android:name="android.app.lib_name"
-42-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:26:17-52
-43                android:value="" />
-43-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:27:17-33
-44        </activity>
-45
-46        <uses-library
-46-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-47            android:name="androidx.window.extensions"
-47-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-48            android:required="false" />
-48-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-49        <uses-library
-49-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-50            android:name="androidx.window.sidecar"
-50-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-51            android:required="false" />
-51-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-52
-53        <service
-53-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
-54            android:name="androidx.room.MultiInstanceInvalidationService"
-54-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
-55            android:directBootAware="true"
-55-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
-56            android:exported="false" />
-56-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
-57
-58        <provider
-58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-59            android:name="androidx.startup.InitializationProvider"
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-60            android:authorities="com.raian.newsappproject.androidx-startup"
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-61            android:exported="false" >
-61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-62            <meta-data
-62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-64                android:value="androidx.startup" />
-64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-65            <meta-data
-65-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-66-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-67                android:value="androidx.startup" />
-67-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-68        </provider>
-69        <provider
-69-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
-70            android:name="com.squareup.picasso.PicassoProvider"
-70-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
-71            android:authorities="com.raian.newsappproject.com.squareup.picasso"
-71-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
-72            android:exported="false" />
-72-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
-73    </application>
-74
-75</manifest>
+12
+13    <permission
+13-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.raian.newsappproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.raian.newsappproject.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:5:5-28:19
+20        android:allowBackup="true"
+20-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:6:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.9.0] C:\Users\BJIT\.gradle\caches\transforms-3\eef7bded536a75a8daba1eb06483c49f\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:7:9-65
+23        android:debuggable="true"
+24        android:fullBackupContent="@xml/backup_rules"
+24-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:8:9-54
+25        android:icon="@mipmap/ic_launcher"
+25-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:9:9-43
+26        android:label="@string/app_name"
+26-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:10:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:11:9-54
+28        android:supportsRtl="true"
+28-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:12:9-35
+29        android:testOnly="true"
+30        android:theme="@style/Theme.NewsAppProject" >
+30-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:13:9-52
+31        <activity
+31-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:15:9-27:20
+32            android:name="com.raian.newsappproject.MainActivity"
+32-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:16:13-41
+33            android:exported="true" >
+33-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:17:13-36
+34            <intent-filter>
+34-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:18:13-22:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:19:17-69
+35-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:19:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:21:17-77
+37-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:21:27-74
+38            </intent-filter>
+39
+40            <meta-data
+40-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:24:13-26:36
+41                android:name="android.app.lib_name"
+41-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:25:17-52
+42                android:value="" />
+42-->D:\androidStudio\NewsAppProject\app\src\main\AndroidManifest.xml:26:17-33
+43        </activity>
+44
+45        <uses-library
+45-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+46            android:name="androidx.window.extensions"
+46-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+47            android:required="false" />
+47-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+48        <uses-library
+48-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+49            android:name="androidx.window.sidecar"
+49-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+50            android:required="false" />
+50-->[androidx.window:window:1.0.0] C:\Users\BJIT\.gradle\caches\transforms-3\37dcdd18f721acc7d2edf513491e20f4\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+51
+52        <service
+52-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
+53            android:name="androidx.room.MultiInstanceInvalidationService"
+53-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
+54            android:directBootAware="true"
+54-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
+55            android:exported="false" />
+55-->[androidx.room:room-runtime:2.5.0] C:\Users\BJIT\.gradle\caches\transforms-3\4dc3ba17f2e13501ba85997be03d7891\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
+56
+57        <provider
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+58            android:name="androidx.startup.InitializationProvider"
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+59            android:authorities="com.raian.newsappproject.androidx-startup"
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+60            android:exported="false" >
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+61            <meta-data
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+63                android:value="androidx.startup" />
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\BJIT\.gradle\caches\transforms-3\6ae0a0c9afe62d34e8b7d6e81c5db76b\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+64            <meta-data
+64-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+65-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+66                android:value="androidx.startup" />
+66-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\BJIT\.gradle\caches\transforms-3\e4dd9346c6ac400990aee92a163162de\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+67        </provider>
+68        <provider
+68-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:8:9-11:40
+69            android:name="com.squareup.picasso.PicassoProvider"
+69-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:9:13-64
+70            android:authorities="com.raian.newsappproject.com.squareup.picasso"
+70-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:10:13-72
+71            android:exported="false" />
+71-->[com.squareup.picasso:picasso:2.71828] C:\Users\BJIT\.gradle\caches\transforms-3\df2c4fee319c1479b10e767763354074\transformed\picasso-2.71828\AndroidManifest.xml:11:13-37
+72    </application>
+73
+74</manifest>

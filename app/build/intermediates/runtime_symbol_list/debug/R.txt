@@ -1373,6 +1373,7 @@ int color foreground_material_dark 0x7f05005a
 int color foreground_material_light 0x7f05005b
 int color highlighted_text_material_dark 0x7f05005c
 int color highlighted_text_material_light 0x7f05005d
+int color ic_launcher_background 0x7f050264
 int color m3_appbar_overlay_color 0x7f05005e
 int color m3_assist_chip_icon_tint_color 0x7f05005f
 int color m3_assist_chip_stroke_color 0x7f050060
@@ -2592,6 +2593,9 @@ int drawable abc_textfield_search_material 0x7f070070
 int drawable abc_vector_test 0x7f070071
 int drawable avd_hide_password 0x7f070072
 int drawable avd_show_password 0x7f070073
+int drawable baseline_bookmark_24 0x7f0700dc
+int drawable baseline_bookmark_border_24 0x7f0700dd
+int drawable baseline_bookmark_remove_24 0x7f0700de
 int drawable baseline_favorite_border_24 0x7f070074
 int drawable baseline_search_24 0x7f070075
 int drawable btn_checkbox_checked_mtrl 0x7f070076
@@ -2760,6 +2764,7 @@ int id action_bar_title 0x7f09003a
 int id action_bookmarkFragment2_to_detailBookmarkNewsFragment 0x7f09003b
 int id action_container 0x7f09003c
 int id action_context_bar 0x7f09003d
+int id action_detailBookmarkNewsFragment_to_webPageViewFragment 0x7f090208
 int id action_detailNewsArticleFragment_to_webPageViewFragment 0x7f09003e
 int id action_divider 0x7f09003f
 int id action_homeFragment2_to_detailNewsArticleFragment 0x7f090040
@@ -2849,6 +2854,7 @@ int id decelerate 0x7f090093
 int id decelerateAndComplete 0x7f090094
 int id decor_content_parent 0x7f090095
 int id default_activity_button 0x7f090096
+int id deleteBookMark 0x7f090209
 int id deltaRelative 0x7f090097
 int id dependency_ordering 0x7f090098
 int id design_bottom_sheet 0x7f090099
@@ -3417,7 +3423,6 @@ int layout mtrl_picker_header_toggle 0x7f0c0064
 int layout mtrl_picker_text_input_date 0x7f0c0065
 int layout mtrl_picker_text_input_date_range 0x7f0c0066
 int layout new_item_layout 0x7f0c0067
-int layout newsl_list_view_layout 0x7f0c0068
 int layout notification_action 0x7f0c0069
 int layout notification_action_tombstone 0x7f0c006a
 int layout notification_template_custom_big 0x7f0c006b
@@ -3432,6 +3437,7 @@ int menu bottom_nav_menu 0x7f0e0000
 int menu menu_item 0x7f0e0001
 int menu options_menu 0x7f0e0002
 int mipmap ic_launcher 0x7f0f0000
+int mipmap ic_launcher_foreground 0x7f0f0002
 int mipmap ic_launcher_round 0x7f0f0001
 int navigation nav_graph 0x7f100000
 int plurals mtrl_badge_content_description 0x7f110000

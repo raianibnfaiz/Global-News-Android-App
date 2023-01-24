@@ -2,6 +2,7 @@ package com.raian.newsappproject.adapter
 
 import android.content.Context
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.utils.widget.ImageFilterButton
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,7 @@ import com.raian.newsappproject.R
 import com.raian.newsappproject.fragment.BookmarkFragmentDirections
 import com.raian.newsappproject.fragment.HomeFragmentDirections
 import com.raian.newsappproject.models.Bookmark
+import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import com.squareup.picasso.Picasso
 
@@ -30,6 +33,7 @@ class BookmarkAdapter(private val context: Context,
         val authorName: TextView = view.findViewById(R.id.tv_author)
         val date: TextView = view.findViewById(R.id.tv_publishDate)
         val newsCard: CardView = itemView.findViewById(R.id.cardViewNews)
+        val deleteBtn: ImageFilterButton = itemView.findViewById(R.id.deleteBookMark)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -43,24 +47,24 @@ class BookmarkAdapter(private val context: Context,
         if (!TextUtils.isEmpty(news.title)) {
             holder.title.text = news.title
         } else {
-            holder.title.text = "No Title!"
+            holder.title.text = "Title Missing!"
         }
 
         if (!TextUtils.isEmpty(news.description)) {
             holder.description.text = news.description
         } else {
-            holder.description.text = "No Description!"
+            holder.description.text = "Description Missing!"
         }
 
         if (!TextUtils.isEmpty(news.author)) {
             holder.authorName.text = news.author
         } else {
-            holder.authorName.text = "No Author!"
+            holder.authorName.text = "Author Name Missing!"
         }
         if (!TextUtils.isEmpty(news.publishedAt)) {
             holder.date.text = news.publishedAt?.removeRange(10..19) ?: "No Date"
         } else {
-            holder.date.text = "No Date"
+            holder.date.text = "Date Missing"
         }
         if (!TextUtils.isEmpty(news.urlToImage)) {
             Picasso.get()
@@ -81,8 +85,27 @@ class BookmarkAdapter(private val context: Context,
                 .centerCrop()
                 .into(holder.image)
         }
+        holder.deleteBtn.setOnClickListener {
+            val article = TempArticle(
+                news.author,
+                news.content,
+                news.description,
+                news.publishedAt,
+                news.source,
+                news.title,
+                news.catagory,
+                news.url,
+                news.urlToImage,
+                false
+            )
+            try {
+                viewModel.updateArticle(article)
+            } catch (e: Exception) {
+                Log.d("tag", "Error: ")
+            }
+            viewModel.deleteBookBarkArticle(news)
+        }
         holder.newsCard.setOnClickListener {
-            Toast.makeText(context, "Card Clicked", Toast.LENGTH_SHORT).show()
             val action = BookmarkFragmentDirections.actionBookmarkFragment2ToDetailBookmarkNewsFragment(news)
             Navigation.findNavController(holder.itemView).navigate(action)
         }

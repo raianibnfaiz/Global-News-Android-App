@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.utils.widget.ImageFilterButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -27,6 +28,9 @@ public final class ItemLayoutBinding implements ViewBinding {
 
   @NonNull
   public final CardView cardViewNews;
+
+  @NonNull
+  public final ImageFilterButton deleteBookMark;
 
   @NonNull
   public final ConstraintLayout details;
@@ -47,12 +51,13 @@ public final class ItemLayoutBinding implements ViewBinding {
   public final TextView tvTitle;
 
   private ItemLayoutBinding(@NonNull CardView rootView, @NonNull LinearLayout authorAndDate,
-      @NonNull CardView cardViewNews, @NonNull ConstraintLayout details, @NonNull ImageView ivImage,
-      @NonNull TextView tvAuthor, @NonNull TextView tvDescription, @NonNull TextView tvPublishDate,
-      @NonNull TextView tvTitle) {
+      @NonNull CardView cardViewNews, @NonNull ImageFilterButton deleteBookMark,
+      @NonNull ConstraintLayout details, @NonNull ImageView ivImage, @NonNull TextView tvAuthor,
+      @NonNull TextView tvDescription, @NonNull TextView tvPublishDate, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.authorAndDate = authorAndDate;
     this.cardViewNews = cardViewNews;
+    this.deleteBookMark = deleteBookMark;
     this.details = details;
     this.ivImage = ivImage;
     this.tvAuthor = tvAuthor;
@@ -96,6 +101,12 @@ public final class ItemLayoutBinding implements ViewBinding {
 
       CardView cardViewNews = (CardView) rootView;
 
+      id = R.id.deleteBookMark;
+      ImageFilterButton deleteBookMark = ViewBindings.findChildViewById(rootView, id);
+      if (deleteBookMark == null) {
+        break missingId;
+      }
+
       id = R.id.details;
       ConstraintLayout details = ViewBindings.findChildViewById(rootView, id);
       if (details == null) {
@@ -132,8 +143,8 @@ public final class ItemLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemLayoutBinding((CardView) rootView, authorAndDate, cardViewNews, details,
-          ivImage, tvAuthor, tvDescription, tvPublishDate, tvTitle);
+      return new ItemLayoutBinding((CardView) rootView, authorAndDate, cardViewNews, deleteBookMark,
+          details, ivImage, tvAuthor, tvDescription, tvPublishDate, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

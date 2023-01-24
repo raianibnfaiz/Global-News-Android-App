@@ -38,6 +38,8 @@ public final class NewsDao_Impl implements NewsDao {
 
   private final EntityInsertionAdapter<Bookmark> __insertionAdapterOfBookmark;
 
+  private final EntityDeletionOrUpdateAdapter<Bookmark> __deletionAdapterOfBookmark;
+
   private final EntityDeletionOrUpdateAdapter<TempArticle> __deletionAdapterOfTempArticle;
 
   private final EntityDeletionOrUpdateAdapter<TempArticle> __updateAdapterOfTempArticle;
@@ -59,177 +61,208 @@ public final class NewsDao_Impl implements NewsDao {
     this.__insertionAdapterOfTempArticle = new EntityInsertionAdapter<TempArticle>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `articles` (`id`,`author`,`content`,`description`,`publishedAt`,`source`,`title`,`catagory`,`url`,`urlToImage`,`likedArticle`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR IGNORE INTO `articles` (`author`,`content`,`description`,`publishedAt`,`source`,`title`,`catagory`,`url`,`urlToImage`,`likedArticle`) VALUES (?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, TempArticle value) {
-        stmt.bindLong(1, value.getId());
         if (value.getAuthor() == null) {
-          stmt.bindNull(2);
+          stmt.bindNull(1);
         } else {
-          stmt.bindString(2, value.getAuthor());
+          stmt.bindString(1, value.getAuthor());
         }
         if (value.getContent() == null) {
-          stmt.bindNull(3);
+          stmt.bindNull(2);
         } else {
-          stmt.bindString(3, value.getContent());
+          stmt.bindString(2, value.getContent());
         }
         if (value.getDescription() == null) {
-          stmt.bindNull(4);
+          stmt.bindNull(3);
         } else {
-          stmt.bindString(4, value.getDescription());
+          stmt.bindString(3, value.getDescription());
         }
         if (value.getPublishedAt() == null) {
-          stmt.bindNull(5);
+          stmt.bindNull(4);
         } else {
-          stmt.bindString(5, value.getPublishedAt());
+          stmt.bindString(4, value.getPublishedAt());
         }
         final String _tmp = __newsConverter.toSource(value.getSource());
         if (_tmp == null) {
-          stmt.bindNull(6);
-        } else {
-          stmt.bindString(6, _tmp);
-        }
-        if (value.getTitle() == null) {
-          stmt.bindNull(7);
-        } else {
-          stmt.bindString(7, value.getTitle());
-        }
-        if (value.getCatagory() == null) {
-          stmt.bindNull(8);
-        } else {
-          stmt.bindString(8, value.getCatagory());
-        }
-        if (value.getUrl() == null) {
-          stmt.bindNull(9);
-        } else {
-          stmt.bindString(9, value.getUrl());
-        }
-        if (value.getUrlToImage() == null) {
-          stmt.bindNull(10);
-        } else {
-          stmt.bindString(10, value.getUrlToImage());
-        }
-        final int _tmp_1 = value.getLikedArticle() ? 1 : 0;
-        stmt.bindLong(11, _tmp_1);
-      }
-    };
-    this.__insertionAdapterOfBookmark = new EntityInsertionAdapter<Bookmark>(__db) {
-      @Override
-      public String createQuery() {
-        return "INSERT OR REPLACE INTO `bookmark` (`id`,`author`,`content`,`description`,`publishedAt`,`title`,`url`,`urlToImage`) VALUES (nullif(?, 0),?,?,?,?,?,?,?)";
-      }
-
-      @Override
-      public void bind(SupportSQLiteStatement stmt, Bookmark value) {
-        stmt.bindLong(1, value.getId());
-        if (value.getAuthor() == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.getAuthor());
-        }
-        if (value.getContent() == null) {
-          stmt.bindNull(3);
-        } else {
-          stmt.bindString(3, value.getContent());
-        }
-        if (value.getDescription() == null) {
-          stmt.bindNull(4);
-        } else {
-          stmt.bindString(4, value.getDescription());
-        }
-        if (value.getPublishedAt() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getPublishedAt());
+          stmt.bindString(5, _tmp);
         }
         if (value.getTitle() == null) {
           stmt.bindNull(6);
         } else {
           stmt.bindString(6, value.getTitle());
         }
-        if (value.getUrl() == null) {
+        if (value.getCatagory() == null) {
           stmt.bindNull(7);
         } else {
-          stmt.bindString(7, value.getUrl());
+          stmt.bindString(7, value.getCatagory());
         }
-        if (value.getUrlToImage() == null) {
+        if (value.getUrl() == null) {
           stmt.bindNull(8);
         } else {
-          stmt.bindString(8, value.getUrlToImage());
+          stmt.bindString(8, value.getUrl());
+        }
+        if (value.getUrlToImage() == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindString(9, value.getUrlToImage());
+        }
+        final int _tmp_1 = value.getLikedArticle() ? 1 : 0;
+        stmt.bindLong(10, _tmp_1);
+      }
+    };
+    this.__insertionAdapterOfBookmark = new EntityInsertionAdapter<Bookmark>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR IGNORE INTO `bookmark` (`author`,`content`,`description`,`publishedAt`,`source`,`title`,`catagory`,`url`,`urlToImage`) VALUES (?,?,?,?,?,?,?,?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Bookmark value) {
+        if (value.getAuthor() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getAuthor());
+        }
+        if (value.getContent() == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.getContent());
+        }
+        if (value.getDescription() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getDescription());
+        }
+        if (value.getPublishedAt() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getPublishedAt());
+        }
+        final String _tmp = __newsConverter.toSource(value.getSource());
+        if (_tmp == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, _tmp);
+        }
+        if (value.getTitle() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getTitle());
+        }
+        if (value.getCatagory() == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.getCatagory());
+        }
+        if (value.getUrl() == null) {
+          stmt.bindNull(8);
+        } else {
+          stmt.bindString(8, value.getUrl());
+        }
+        if (value.getUrlToImage() == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindString(9, value.getUrlToImage());
+        }
+      }
+    };
+    this.__deletionAdapterOfBookmark = new EntityDeletionOrUpdateAdapter<Bookmark>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `bookmark` WHERE `url` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Bookmark value) {
+        if (value.getUrl() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getUrl());
         }
       }
     };
     this.__deletionAdapterOfTempArticle = new EntityDeletionOrUpdateAdapter<TempArticle>(__db) {
       @Override
       public String createQuery() {
-        return "DELETE FROM `articles` WHERE `id` = ?";
+        return "DELETE FROM `articles` WHERE `url` = ?";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, TempArticle value) {
-        stmt.bindLong(1, value.getId());
+        if (value.getUrl() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getUrl());
+        }
       }
     };
     this.__updateAdapterOfTempArticle = new EntityDeletionOrUpdateAdapter<TempArticle>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `articles` SET `id` = ?,`author` = ?,`content` = ?,`description` = ?,`publishedAt` = ?,`source` = ?,`title` = ?,`catagory` = ?,`url` = ?,`urlToImage` = ?,`likedArticle` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `articles` SET `author` = ?,`content` = ?,`description` = ?,`publishedAt` = ?,`source` = ?,`title` = ?,`catagory` = ?,`url` = ?,`urlToImage` = ?,`likedArticle` = ? WHERE `url` = ?";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, TempArticle value) {
-        stmt.bindLong(1, value.getId());
         if (value.getAuthor() == null) {
-          stmt.bindNull(2);
+          stmt.bindNull(1);
         } else {
-          stmt.bindString(2, value.getAuthor());
+          stmt.bindString(1, value.getAuthor());
         }
         if (value.getContent() == null) {
-          stmt.bindNull(3);
+          stmt.bindNull(2);
         } else {
-          stmt.bindString(3, value.getContent());
+          stmt.bindString(2, value.getContent());
         }
         if (value.getDescription() == null) {
-          stmt.bindNull(4);
+          stmt.bindNull(3);
         } else {
-          stmt.bindString(4, value.getDescription());
+          stmt.bindString(3, value.getDescription());
         }
         if (value.getPublishedAt() == null) {
-          stmt.bindNull(5);
+          stmt.bindNull(4);
         } else {
-          stmt.bindString(5, value.getPublishedAt());
+          stmt.bindString(4, value.getPublishedAt());
         }
         final String _tmp = __newsConverter.toSource(value.getSource());
         if (_tmp == null) {
-          stmt.bindNull(6);
+          stmt.bindNull(5);
         } else {
-          stmt.bindString(6, _tmp);
+          stmt.bindString(5, _tmp);
         }
         if (value.getTitle() == null) {
-          stmt.bindNull(7);
+          stmt.bindNull(6);
         } else {
-          stmt.bindString(7, value.getTitle());
+          stmt.bindString(6, value.getTitle());
         }
         if (value.getCatagory() == null) {
-          stmt.bindNull(8);
+          stmt.bindNull(7);
         } else {
-          stmt.bindString(8, value.getCatagory());
+          stmt.bindString(7, value.getCatagory());
         }
         if (value.getUrl() == null) {
-          stmt.bindNull(9);
+          stmt.bindNull(8);
         } else {
-          stmt.bindString(9, value.getUrl());
+          stmt.bindString(8, value.getUrl());
         }
         if (value.getUrlToImage() == null) {
-          stmt.bindNull(10);
+          stmt.bindNull(9);
         } else {
-          stmt.bindString(10, value.getUrlToImage());
+          stmt.bindString(9, value.getUrlToImage());
         }
         final int _tmp_1 = value.getLikedArticle() ? 1 : 0;
-        stmt.bindLong(11, _tmp_1);
-        stmt.bindLong(12, value.getId());
+        stmt.bindLong(10, _tmp_1);
+        if (value.getUrl() == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindString(11, value.getUrl());
+        }
       }
     };
     this.__preparedStmtOfDeleteSports = new SharedSQLiteStatement(__db) {
@@ -303,6 +336,24 @@ public final class NewsDao_Impl implements NewsDao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfBookmark.insert(article);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, continuation);
+  }
+
+  @Override
+  public Object deleteBookMarKArticle(final Bookmark bookMarkNews,
+      final Continuation<? super Unit> continuation) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfBookmark.handle(bookMarkNews);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -449,7 +500,6 @@ public final class NewsDao_Impl implements NewsDao {
       public List<TempArticle> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
@@ -463,8 +513,6 @@ public final class NewsDao_Impl implements NewsDao {
           final List<TempArticle> _result = new ArrayList<TempArticle>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TempArticle _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -525,7 +573,7 @@ public final class NewsDao_Impl implements NewsDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfLikedArticle);
             _tmpLikedArticle = _tmp_1 != 0;
-            _item = new TempArticle(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
+            _item = new TempArticle(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
             _result.add(_item);
           }
           return _result;
@@ -550,7 +598,6 @@ public final class NewsDao_Impl implements NewsDao {
       public List<TempArticle> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
@@ -564,8 +611,6 @@ public final class NewsDao_Impl implements NewsDao {
           final List<TempArticle> _result = new ArrayList<TempArticle>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TempArticle _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -626,7 +671,7 @@ public final class NewsDao_Impl implements NewsDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfLikedArticle);
             _tmpLikedArticle = _tmp_1 != 0;
-            _item = new TempArticle(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
+            _item = new TempArticle(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
             _result.add(_item);
           }
           return _result;
@@ -651,7 +696,6 @@ public final class NewsDao_Impl implements NewsDao {
       public List<TempArticle> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
@@ -665,8 +709,6 @@ public final class NewsDao_Impl implements NewsDao {
           final List<TempArticle> _result = new ArrayList<TempArticle>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TempArticle _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -727,7 +769,7 @@ public final class NewsDao_Impl implements NewsDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfLikedArticle);
             _tmpLikedArticle = _tmp_1 != 0;
-            _item = new TempArticle(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
+            _item = new TempArticle(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
             _result.add(_item);
           }
           return _result;
@@ -752,7 +794,6 @@ public final class NewsDao_Impl implements NewsDao {
       public List<TempArticle> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
@@ -766,8 +807,6 @@ public final class NewsDao_Impl implements NewsDao {
           final List<TempArticle> _result = new ArrayList<TempArticle>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TempArticle _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -828,7 +867,7 @@ public final class NewsDao_Impl implements NewsDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfLikedArticle);
             _tmpLikedArticle = _tmp_1 != 0;
-            _item = new TempArticle(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
+            _item = new TempArticle(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
             _result.add(_item);
           }
           return _result;
@@ -853,7 +892,6 @@ public final class NewsDao_Impl implements NewsDao {
       public List<TempArticle> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
@@ -867,8 +905,6 @@ public final class NewsDao_Impl implements NewsDao {
           final List<TempArticle> _result = new ArrayList<TempArticle>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final TempArticle _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -929,7 +965,7 @@ public final class NewsDao_Impl implements NewsDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfLikedArticle);
             _tmpLikedArticle = _tmp_1 != 0;
-            _item = new TempArticle(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
+            _item = new TempArticle(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage,_tmpLikedArticle);
             _result.add(_item);
           }
           return _result;
@@ -954,19 +990,18 @@ public final class NewsDao_Impl implements NewsDao {
       public List<Bookmark> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final int _cursorIndexOfPublishedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "publishedAt");
+          final int _cursorIndexOfSource = CursorUtil.getColumnIndexOrThrow(_cursor, "source");
           final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+          final int _cursorIndexOfCatagory = CursorUtil.getColumnIndexOrThrow(_cursor, "catagory");
           final int _cursorIndexOfUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "url");
           final int _cursorIndexOfUrlToImage = CursorUtil.getColumnIndexOrThrow(_cursor, "urlToImage");
           final List<Bookmark> _result = new ArrayList<Bookmark>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Bookmark _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
               _tmpAuthor = null;
@@ -991,11 +1026,25 @@ public final class NewsDao_Impl implements NewsDao {
             } else {
               _tmpPublishedAt = _cursor.getString(_cursorIndexOfPublishedAt);
             }
+            final Source _tmpSource;
+            final String _tmp;
+            if (_cursor.isNull(_cursorIndexOfSource)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getString(_cursorIndexOfSource);
+            }
+            _tmpSource = __newsConverter.fromString(_tmp);
             final String _tmpTitle;
             if (_cursor.isNull(_cursorIndexOfTitle)) {
               _tmpTitle = null;
             } else {
               _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+            }
+            final String _tmpCatagory;
+            if (_cursor.isNull(_cursorIndexOfCatagory)) {
+              _tmpCatagory = null;
+            } else {
+              _tmpCatagory = _cursor.getString(_cursorIndexOfCatagory);
             }
             final String _tmpUrl;
             if (_cursor.isNull(_cursorIndexOfUrl)) {
@@ -1009,7 +1058,7 @@ public final class NewsDao_Impl implements NewsDao {
             } else {
               _tmpUrlToImage = _cursor.getString(_cursorIndexOfUrlToImage);
             }
-            _item = new Bookmark(_tmpId,_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpTitle,_tmpUrl,_tmpUrlToImage);
+            _item = new Bookmark(_tmpAuthor,_tmpContent,_tmpDescription,_tmpPublishedAt,_tmpSource,_tmpTitle,_tmpCatagory,_tmpUrl,_tmpUrlToImage);
             _result.add(_item);
           }
           return _result;

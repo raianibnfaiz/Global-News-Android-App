@@ -1,7 +1,6 @@
 package com.raian.newsappproject.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -12,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.raian.newsappproject.R
 import com.raian.newsappproject.Repository.NewsRepository
-import com.raian.newsappproject.adapter.ScienceAdapter
-import com.raian.newsappproject.adapter.TopNewsAdapter
+import com.raian.newsappproject.adapter.NewsAdapter
 import com.raian.newsappproject.db.NewsDatabase
-import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +42,7 @@ class TopNewsFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText != null) {
-                    val adapter = recyclerView.adapter as TopNewsAdapter
+                    val adapter = recyclerView.adapter as NewsAdapter
                     adapter.filter(newText)
                 }
                 return false
@@ -71,7 +68,7 @@ class TopNewsFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rv_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
-        val adapter = TopNewsAdapter(
+        val adapter = NewsAdapter(
             requireContext(), viewModel, listNews as ArrayList<TempArticle>
         )
         recyclerView.adapter = adapter

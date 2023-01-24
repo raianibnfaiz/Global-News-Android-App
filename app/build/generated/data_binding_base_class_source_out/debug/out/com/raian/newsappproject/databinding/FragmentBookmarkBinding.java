@@ -4,7 +4,6 @@ package com.raian.newsappproject.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,17 +23,12 @@ public final class FragmentBookmarkBinding implements ViewBinding {
   public final RecyclerView photosGrid;
 
   @NonNull
-  public final ImageView statusImage;
-
-  @NonNull
   public final SwipeRefreshLayout swipeLayout;
 
   private FragmentBookmarkBinding(@NonNull SwipeRefreshLayout rootView,
-      @NonNull RecyclerView photosGrid, @NonNull ImageView statusImage,
-      @NonNull SwipeRefreshLayout swipeLayout) {
+      @NonNull RecyclerView photosGrid, @NonNull SwipeRefreshLayout swipeLayout) {
     this.rootView = rootView;
     this.photosGrid = photosGrid;
-    this.statusImage = statusImage;
     this.swipeLayout = swipeLayout;
   }
 
@@ -71,16 +65,9 @@ public final class FragmentBookmarkBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.status_image;
-      ImageView statusImage = ViewBindings.findChildViewById(rootView, id);
-      if (statusImage == null) {
-        break missingId;
-      }
-
       SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) rootView;
 
-      return new FragmentBookmarkBinding((SwipeRefreshLayout) rootView, photosGrid, statusImage,
-          swipeLayout);
+      return new FragmentBookmarkBinding((SwipeRefreshLayout) rootView, photosGrid, swipeLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

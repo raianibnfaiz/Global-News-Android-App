@@ -1374,6 +1374,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2593,6 +2594,9 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_bookmark_24
+drawable baseline_bookmark_border_24
+drawable baseline_bookmark_remove_24
 drawable baseline_favorite_border_24
 drawable baseline_search_24
 drawable btn_checkbox_checked_mtrl
@@ -2761,6 +2765,7 @@ id action_bar_title
 id action_bookmarkFragment2_to_detailBookmarkNewsFragment
 id action_container
 id action_context_bar
+id action_detailBookmarkNewsFragment_to_webPageViewFragment
 id action_detailNewsArticleFragment_to_webPageViewFragment
 id action_divider
 id action_homeFragment2_to_detailNewsArticleFragment
@@ -2850,6 +2855,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteBookMark
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3418,7 +3424,6 @@ layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout new_item_layout
-layout newsl_list_view_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -3433,6 +3438,7 @@ menu bottom_nav_menu
 menu menu_item
 menu options_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description

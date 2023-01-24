@@ -7,7 +7,7 @@ public final class NewsApiInterfaceKt {
     @org.jetbrains.annotations.NotNull()
     private static final java.lang.String BASE_URL = "https://newsapi.org/v2/";
     @org.jetbrains.annotations.NotNull()
-    public static final java.lang.String API_KEY = "14cae576ef1844059b621b865d79c164";
+    public static final java.lang.String API_KEY = "98d7f1e882bf4a16874d71e0258b81c2";
     private static final com.squareup.moshi.Moshi moshi = null;
     private static final retrofit2.Retrofit retrofit = null;
     
