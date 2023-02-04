@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+<<<<<<< HEAD
         android:id="@+id/homeFragment"
+=======
+        android:id="@+id/homeFragment2"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
         />
     <item
+<<<<<<< HEAD
         android:id="@+id/bookmarkFragment"
+=======
+        android:id="@+id/bookmarkFragment2"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         android:title="BookMark"
         android:icon="@drawable/ic_baseline_bookmark_24"/>
 </menu>

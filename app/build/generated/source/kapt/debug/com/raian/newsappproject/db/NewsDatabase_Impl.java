@@ -36,6 +36,7 @@ public final class NewsDatabase_Impl extends NewsDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
+<<<<<<< HEAD
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(3) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
@@ -43,6 +44,15 @@ public final class NewsDatabase_Impl extends NewsDatabase {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `bookmark` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `author` TEXT, `content` TEXT, `description` TEXT, `publishedAt` TEXT, `title` TEXT, `url` TEXT, `urlToImage` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
         _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c4e777959baa4d445c2d44cc27ae088e')");
+=======
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(5) {
+      @Override
+      public void createAllTables(SupportSQLiteDatabase _db) {
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `articles` (`author` TEXT, `content` TEXT, `description` TEXT, `publishedAt` TEXT, `source` TEXT, `title` TEXT, `catagory` TEXT, `url` TEXT NOT NULL, `urlToImage` TEXT, `likedArticle` INTEGER NOT NULL, PRIMARY KEY(`url`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `bookmark` (`author` TEXT, `content` TEXT, `description` TEXT, `publishedAt` TEXT, `source` TEXT, `title` TEXT, `catagory` TEXT, `url` TEXT NOT NULL, `urlToImage` TEXT, PRIMARY KEY(`url`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6603f83a9151cec16762d316172f6f87')");
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
       }
 
       @Override
@@ -87,8 +97,12 @@ public final class NewsDatabase_Impl extends NewsDatabase {
 
       @Override
       public RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
+<<<<<<< HEAD
         final HashMap<String, TableInfo.Column> _columnsArticles = new HashMap<String, TableInfo.Column>(11);
         _columnsArticles.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+=======
+        final HashMap<String, TableInfo.Column> _columnsArticles = new HashMap<String, TableInfo.Column>(10);
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         _columnsArticles.put("author", new TableInfo.Column("author", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsArticles.put("content", new TableInfo.Column("content", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsArticles.put("description", new TableInfo.Column("description", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -96,7 +110,11 @@ public final class NewsDatabase_Impl extends NewsDatabase {
         _columnsArticles.put("source", new TableInfo.Column("source", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsArticles.put("title", new TableInfo.Column("title", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsArticles.put("catagory", new TableInfo.Column("catagory", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+<<<<<<< HEAD
         _columnsArticles.put("url", new TableInfo.Column("url", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+=======
+        _columnsArticles.put("url", new TableInfo.Column("url", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         _columnsArticles.put("urlToImage", new TableInfo.Column("urlToImage", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsArticles.put("likedArticle", new TableInfo.Column("likedArticle", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysArticles = new HashSet<TableInfo.ForeignKey>(0);
@@ -108,14 +126,25 @@ public final class NewsDatabase_Impl extends NewsDatabase {
                   + " Expected:\n" + _infoArticles + "\n"
                   + " Found:\n" + _existingArticles);
         }
+<<<<<<< HEAD
         final HashMap<String, TableInfo.Column> _columnsBookmark = new HashMap<String, TableInfo.Column>(8);
         _columnsBookmark.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+=======
+        final HashMap<String, TableInfo.Column> _columnsBookmark = new HashMap<String, TableInfo.Column>(9);
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         _columnsBookmark.put("author", new TableInfo.Column("author", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookmark.put("content", new TableInfo.Column("content", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookmark.put("description", new TableInfo.Column("description", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookmark.put("publishedAt", new TableInfo.Column("publishedAt", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+<<<<<<< HEAD
         _columnsBookmark.put("title", new TableInfo.Column("title", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookmark.put("url", new TableInfo.Column("url", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+=======
+        _columnsBookmark.put("source", new TableInfo.Column("source", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsBookmark.put("title", new TableInfo.Column("title", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsBookmark.put("catagory", new TableInfo.Column("catagory", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsBookmark.put("url", new TableInfo.Column("url", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         _columnsBookmark.put("urlToImage", new TableInfo.Column("urlToImage", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysBookmark = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesBookmark = new HashSet<TableInfo.Index>(0);
@@ -128,7 +157,11 @@ public final class NewsDatabase_Impl extends NewsDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
+<<<<<<< HEAD
     }, "c4e777959baa4d445c2d44cc27ae088e", "5d7eaa8d0c6c704116801ec9b4e39064");
+=======
+    }, "6603f83a9151cec16762d316172f6f87", "6483718f3ab21d16da2afe1cbb0b2f5c");
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

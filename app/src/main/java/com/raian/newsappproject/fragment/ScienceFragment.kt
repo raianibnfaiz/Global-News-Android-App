@@ -1,11 +1,9 @@
 package com.raian.newsappproject.fragment
 
 import android.os.Bundle
-import android.util.Log
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.raian.newsappproject.R
 import com.raian.newsappproject.Repository.NewsRepository
-import com.raian.newsappproject.adapter.ScienceAdapter
-import com.raian.newsappproject.adapter.TechnologyAdapter
+import com.raian.newsappproject.adapter.NewsAdapter
 import com.raian.newsappproject.db.NewsDatabase
-import com.raian.newsappproject.models.Article
 import com.raian.newsappproject.models.TempArticle
 import com.raian.newsappproject.viewModel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
@@ -31,15 +27,16 @@ class ScienceFragment : Fragment() {
     var listNews = ArrayList<TempArticle>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_science, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,8 +46,8 @@ class ScienceFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rv_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
-        val adapter = ScienceAdapter(
-            requireContext(), viewModel, listNews as ArrayList<TempArticle>
+        val adapter = NewsAdapter(
+            requireContext(), viewModel, listNews
         )
         recyclerView.adapter = adapter
         lifecycleScope.launch {
@@ -78,6 +75,27 @@ class ScienceFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        inflater.inflate(R.menu.menu_item, menu)
+        val item = menu.findItem(R.id.actionSearch)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    val adapter = recyclerView.adapter as NewsAdapter
+                    adapter.filter(newText)
+                }
+                return false
+            }
+        })
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
 

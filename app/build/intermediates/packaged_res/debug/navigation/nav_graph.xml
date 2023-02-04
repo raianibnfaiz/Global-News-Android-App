@@ -7,6 +7,7 @@
     <fragment
         android:id="@+id/homeFragment2"
         android:name="com.raian.newsappproject.fragment.HomeFragment"
+<<<<<<< HEAD
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -24,24 +25,63 @@
         <action
             android:id="@+id/action_detailNewsArticleFragment2_to_webPageViewFragment"
             app:destination="@id/webPageViewFragment" />
+=======
+        android:label="News Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_detailNewsArticleFragment"
+            app:destination="@id/detailNewsArticleFragment" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     </fragment>
     <fragment
         android:id="@+id/bookmarkFragment2"
         android:name="com.raian.newsappproject.fragment.BookmarkFragment"
+<<<<<<< HEAD
         android:label="fragment_bookmark"
+=======
+        android:label="Bookmarked News"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         tools:layout="@layout/fragment_bookmark" >
         <action
             android:id="@+id/action_bookmarkFragment2_to_detailBookmarkNewsFragment"
             app:destination="@id/detailBookmarkNewsFragment" />
     </fragment>
     <fragment
+<<<<<<< HEAD
         android:id="@+id/detailBookmarkNewsFragment"
         android:name="com.raian.newsappproject.fragment.DetailBookmarkNewsFragment"
         android:label="fragment_detail_bookmark_news"
+=======
+        android:id="@+id/detailNewsArticleFragment"
+        android:name="com.raian.newsappproject.fragment.DetailNewsArticleFragment"
+        android:label="News Detail"
+        tools:layout="@layout/fragment_detail_news_article" >
+        <argument
+            android:name="details"
+            app:argType="com.raian.newsappproject.models.TempArticle" />
+        <action
+            android:id="@+id/action_detailNewsArticleFragment_to_webPageViewFragment"
+            app:destination="@id/webPageViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webPageViewFragment"
+        android:name="com.raian.newsappproject.fragment.WebPageViewFragment"
+        android:label="Live News"
+        tools:layout="@layout/fragment_web_page_view" >
+        <argument
+            android:name="newsUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBookmarkNewsFragment"
+        android:name="com.raian.newsappproject.fragment.DetailBookmarkNewsFragment"
+        android:label="Bookmarked Article Detail"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         tools:layout="@layout/fragment_detail_bookmark_news" >
         <argument
             android:name="detailBookmark"
             app:argType="com.raian.newsappproject.models.Bookmark" />
+<<<<<<< HEAD
     </fragment>
     <fragment
         android:id="@+id/webPageViewFragment"
@@ -53,4 +93,10 @@
             app:argType="string" />
     </fragment>
 
+=======
+        <action
+            android:id="@+id/action_detailBookmarkNewsFragment_to_webPageViewFragment"
+            app:destination="@id/webPageViewFragment" />
+    </fragment>
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 </navigation>

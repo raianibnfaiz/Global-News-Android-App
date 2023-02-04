@@ -31,6 +31,7 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
   public final TextView newsContent;
 
   @NonNull
+<<<<<<< HEAD
   public final TextView newsDescription;
 
   @NonNull
@@ -39,12 +40,31 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
   private FragmentDetailBookmarkNewsBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button continueButton, @NonNull TextView newTitle, @NonNull TextView newsContent,
       @NonNull TextView newsDescription, @NonNull ImageView newsImage) {
+=======
+  public final ImageView newsImage;
+
+  @NonNull
+  public final TextView newsSource;
+
+  @NonNull
+  public final TextView tvDescription;
+
+  private FragmentDetailBookmarkNewsBinding(@NonNull ConstraintLayout rootView,
+      @NonNull Button continueButton, @NonNull TextView newTitle, @NonNull TextView newsContent,
+      @NonNull ImageView newsImage, @NonNull TextView newsSource, @NonNull TextView tvDescription) {
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     this.rootView = rootView;
     this.continueButton = continueButton;
     this.newTitle = newTitle;
     this.newsContent = newsContent;
+<<<<<<< HEAD
     this.newsDescription = newsDescription;
     this.newsImage = newsImage;
+=======
+    this.newsImage = newsImage;
+    this.newsSource = newsSource;
+    this.tvDescription = tvDescription;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
   }
 
   @Override
@@ -92,20 +112,40 @@ public final class FragmentDetailBookmarkNewsBinding implements ViewBinding {
         break missingId;
       }
 
+<<<<<<< HEAD
       id = R.id.newsDescription;
       TextView newsDescription = ViewBindings.findChildViewById(rootView, id);
       if (newsDescription == null) {
         break missingId;
       }
 
+=======
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
       id = R.id.newsImage;
       ImageView newsImage = ViewBindings.findChildViewById(rootView, id);
       if (newsImage == null) {
         break missingId;
       }
 
+<<<<<<< HEAD
       return new FragmentDetailBookmarkNewsBinding((ConstraintLayout) rootView, continueButton,
           newTitle, newsContent, newsDescription, newsImage);
+=======
+      id = R.id.newsSource;
+      TextView newsSource = ViewBindings.findChildViewById(rootView, id);
+      if (newsSource == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_description;
+      TextView tvDescription = ViewBindings.findChildViewById(rootView, id);
+      if (tvDescription == null) {
+        break missingId;
+      }
+
+      return new FragmentDetailBookmarkNewsBinding((ConstraintLayout) rootView, continueButton,
+          newTitle, newsContent, newsImage, newsSource, tvDescription);
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -14,7 +14,7 @@ class TabLayoutAdapter(manager: FragmentManager, lifecycle: Lifecycle) : Fragmen
         val tabList = listOf(
             Tab(TopNewsFragment(), "Top-News"),
             Tab(SportsFragment(), "Sports"),
-            Tab(ScienceFragment(), "Science"),
+           Tab(ScienceFragment(), "Science"),
             Tab(TechnologyFragment(), "Technology")
         )
     }

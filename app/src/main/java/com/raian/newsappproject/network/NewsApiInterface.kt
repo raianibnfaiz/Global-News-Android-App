@@ -9,22 +9,23 @@ import retrofit2.http.GET
 
 
 val BASE_URL = "https://newsapi.org/v2/"
+const val API_KEY = "8cf7e8a2626446ac9fd700b336adec01"
 private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
 private val retrofit =
     Retrofit.Builder().addConverterFactory(MoshiConverterFactory.create(moshi)).baseUrl(BASE_URL)
         .build()
 interface NewsApiInterface {
-    @GET("top-headlines?country=us&category=business&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @GET("top-headlines?country=us&category=business&apiKey=${API_KEY}")
     suspend fun getBusiness(): NewsDatAaSource
 
-    @GET("top-headlines?country=us&category=sports&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @GET("top-headlines?country=us&category=sports&apiKey=${API_KEY}")
     suspend fun getSports(): NewsDatAaSource
 
-    @GET("top-headlines?country=us&category=science&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @GET("top-headlines?country=us&category=science&apiKey=${API_KEY}")
     suspend fun getScience(): NewsDatAaSource
 
-    @GET("top-headlines?country=us&category=technology&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+    @GET("top-headlines?country=us&category=technology&apiKey=${API_KEY}")
     suspend fun getTechnology(): NewsDatAaSource
 }
 

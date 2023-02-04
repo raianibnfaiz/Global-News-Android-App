@@ -39,38 +39,11 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
         val applicationDao = NewsDatabase.getDatabase(application)?.newsDao()
         repository=applicationDao?.let { NewsRepository(it) }!!
 
-        //setBusinessArticle()
-        //getBusinessNews()
-
-       // setSportsArticle()
-        //setScienceArticle()
-        //setTechnologyArticle()
         bookMarkNews = repository.getAllBookMarkNews()
         readAllBusinessNews = repository.getBusinessNews()
         readAllSportsNews = repository.getSportsNews()
         readAllSciencesNews = repository.getScienceNews()
         readAllTechnologyNews = repository.getTechnologyNews()
-//        getSportsNews()
-//        getScienceNews()
-        getTechnologyNews()
-
-//            val newsDao = NewsDatabase.getDatabase(application)?.newsDao()
-//            repository = newsDao?.let { NewsRepository(it) }!!
-//            readAllNewsData = repository.readAllWriterData()
-
-
-
-//        val moshi = Moshi.Builder()
-//            .add(KotlinJsonAdapterFactory())
-//            .build()
-//
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl(BASE_URL)
-//            .addConverterFactory(MoshiConverterFactory.create(moshi))
-//            .build()
-//            .create(NewsApiInterface::class.java)
-
-
 
     }
     fun addBookMarkArticle(article: Bookmark) {
@@ -78,177 +51,17 @@ class NewsViewModel(application: Application) : AndroidViewModel(application){
             repository.insertBookMarkArticle(article)
         }
     }
-
-    fun getBusinessNews(){
-        viewModelScope.launch{
-            try {
-                //val response = retrofit.getNews()
-                val response = NewsApi.retrofitService.getBusiness()
-//                for (article in response.articles) {
-//                    Log.d("MainActivity", "Result + $article")
-//                    list.add(article)
-//                }
-                _list.value=response.articles
-                Log.d("home", "Result from viewmodel Listtttt+ ${_list.value}")
-                Log.d("home", "Result from viewmodel Response + ${response.articles}")
-            } catch (e: Exception) {
-                Log.d("home", e.toString())
-
-            }
-
-        }
-    }
-    fun getSportsNews(){
-        viewModelScope.launch{
-            try {
-                //val response = retrofit.getNews()
-                val response = NewsApi.retrofitService.getSports()
-//                for (article in response.articles) {
-//                    Log.d("MainActivity", "Result + $article")
-//                    list.add(article)
-//                }
-                _sportsNewsList.value=response.articles
-                Log.d("home", "Result from viewmodel Listtttt+ ${_list.value}")
-                Log.d("home", "Result from viewmodel Response + ${response.articles}")
-            } catch (e: Exception) {
-                Log.d("home", e.toString())
-
-            }
-
-        }
-    }
-    fun getScienceNews(){
-        viewModelScope.launch{
-            try {
-                //val response = retrofit.getNews()
-                val response = NewsApi.retrofitService.getScience()
-//                for (article in response.articles) {
-//                    Log.d("MainActivity", "Result + $article")
-//                    list.add(article)
-//                }
-                _scienceNewsList.value=response.articles
-                Log.d("home", "Result from viewmodel Listtttt+ ${_list.value}")
-                Log.d("home", "Result from viewmodel Response + ${response.articles}")
-            } catch (e: Exception) {
-                Log.d("home", e.toString())
-
-            }
-
-        }
-    }
-    fun getTechnologyNews(){
-        viewModelScope.launch{
-            try {
-                //val response = retrofit.getNews()
-                val response = NewsApi.retrofitService.getTechnology()
-//                for (article in response.articles) {
-//                    Log.d("MainActivity", "Result + $article")
-//                    list.add(article)
-//                }
-                _technologyNewsList.value=response.articles
-                Log.d("home", "Result from viewmodel Listtttt+ ${_list.value}")
-                Log.d("home", "Result from viewmodel Response + ${response.articles}")
-            } catch (e: Exception) {
-                Log.d("home", e.toString())
-
-            }
-
-        }
-    }
-
-    fun setSportsArticle(){
-        viewModelScope.launch {
-            try {
-                val response = NewsApi.retrofitService.getSports()
-                val adjust = adjustArticleModel(response.articles, "sports")
-                repository.insertArticles(adjust)
-            }
-            catch (e:Exception){
-                Log.d("Error", "error: e")
-            }
-
-
-        }
-    }
-
-    fun setBusinessArticle(){
-        viewModelScope.launch {
-            try {
-                val response = NewsApi.retrofitService.getBusiness()
-                val adjust = adjustArticleModel(response.articles, "business")
-                repository.insertArticles(adjust)
-            }
-            catch (e:Exception){
-                Log.d("Error", "error: e")
-            }
-
-
-        }
-
-    }
-    fun setScienceArticle(){
-        viewModelScope.launch {
-            try {
-                val response = NewsApi.retrofitService.getScience()
-                val adjust = adjustArticleModel(response.articles, "science")
-                repository.insertArticles(adjust)
-            }
-            catch (e:Exception){
-                Log.d("Error", "error: e")
-            }
-
-
-        }
-    }
-
-    fun setTechnologyArticle(){
-        viewModelScope.launch {
-            try {
-                val response = NewsApi.retrofitService.getTechnology()
-                //val response = repository.getTechnologyNews()
-                val adjust = adjustArticleModel(response.articles, "technology")
-                repository.insertArticles(adjust)
-            }
-            catch (e:Exception){
-                Log.d("Error", "error: e")
-            }
-
-
-        }
-    }
-
-    fun adjustArticleModel(articles: List<Article>, category: String): List<TempArticle> {
-        return articles.map{ article->
-        TempArticle(
-            0,
-            article.author,
-            article.content,
-            article.description,
-            article.publishedAt,
-            article.source,
-            article.title,
-            category,
-            article.url,
-            article.urlToImage,
-            false
-        )
-    }
-
-}
-    fun addAllArticle(article: List<TempArticle>) {
+    fun updateArticle(article: TempArticle) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.insertArticles(article)
+           repository.updateArticle(article)
+        }
+    }
+    fun deleteBookBarkArticle(bookMarkNews: Bookmark) {
+        viewModelScope.launch {
+            repository.deleteBookMarKArticle(bookMarkNews)
         }
     }
 
-    fun deleteArticle(){
-        viewModelScope.launch{
-            try {
-                //repository.deleteAll()
-            }
-            catch (e:Exception){
-                Log.d("Error", "error: e")
-            }
-        }
-    }
+
+
 }

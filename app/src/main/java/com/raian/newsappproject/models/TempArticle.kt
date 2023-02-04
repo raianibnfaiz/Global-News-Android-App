@@ -9,8 +9,6 @@ import kotlinx.android.parcel.RawValue
 @Entity(tableName = "articles")
 @Parcelize
 data class TempArticle(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
     val author: String?,
     val content: String?,
     val description: String?,
@@ -18,7 +16,8 @@ data class TempArticle(
     val source: Source?,
     val title: String?,
     val catagory:String?,
-    val url: String?,
+    @PrimaryKey
+    val url: String,
     val urlToImage: String?,
-    val likedArticle: Boolean
+    var likedArticle: Boolean
 ): Parcelable

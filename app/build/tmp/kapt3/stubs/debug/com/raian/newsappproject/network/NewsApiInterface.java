@@ -6,22 +6,38 @@ import java.lang.System;
 public abstract interface NewsApiInterface {
     
     @org.jetbrains.annotations.Nullable()
+<<<<<<< HEAD
     @retrofit2.http.GET(value = "top-headlines?country=us&category=business&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+=======
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=business&apiKey=8cf7e8a2626446ac9fd700b336adec01")
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     public abstract java.lang.Object getBusiness(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
+<<<<<<< HEAD
     @retrofit2.http.GET(value = "top-headlines?country=us&category=sports&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+=======
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=sports&apiKey=8cf7e8a2626446ac9fd700b336adec01")
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     public abstract java.lang.Object getSports(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
+<<<<<<< HEAD
     @retrofit2.http.GET(value = "top-headlines?country=us&category=science&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+=======
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=science&apiKey=8cf7e8a2626446ac9fd700b336adec01")
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     public abstract java.lang.Object getScience(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
     
     @org.jetbrains.annotations.Nullable()
+<<<<<<< HEAD
     @retrofit2.http.GET(value = "top-headlines?country=us&category=technology&apiKey=c8cbffe47af045ffa8e3b15a6e6d2138")
+=======
+    @retrofit2.http.GET(value = "top-headlines?country=us&category=technology&apiKey=8cf7e8a2626446ac9fd700b336adec01")
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     public abstract java.lang.Object getTechnology(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.raian.newsappproject.models.NewsDatAaSource> continuation);
 }

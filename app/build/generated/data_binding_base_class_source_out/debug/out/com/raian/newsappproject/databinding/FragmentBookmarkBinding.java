@@ -4,7 +4,10 @@ package com.raian.newsappproject.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.ImageView;
+=======
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +27,7 @@ public final class FragmentBookmarkBinding implements ViewBinding {
   public final RecyclerView photosGrid;
 
   @NonNull
+<<<<<<< HEAD
   public final ImageView statusImage;
 
   @NonNull
@@ -35,6 +39,14 @@ public final class FragmentBookmarkBinding implements ViewBinding {
     this.rootView = rootView;
     this.photosGrid = photosGrid;
     this.statusImage = statusImage;
+=======
+  public final SwipeRefreshLayout swipeLayout;
+
+  private FragmentBookmarkBinding(@NonNull SwipeRefreshLayout rootView,
+      @NonNull RecyclerView photosGrid, @NonNull SwipeRefreshLayout swipeLayout) {
+    this.rootView = rootView;
+    this.photosGrid = photosGrid;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     this.swipeLayout = swipeLayout;
   }
 
@@ -71,6 +83,7 @@ public final class FragmentBookmarkBinding implements ViewBinding {
         break missingId;
       }
 
+<<<<<<< HEAD
       id = R.id.status_image;
       ImageView statusImage = ViewBindings.findChildViewById(rootView, id);
       if (statusImage == null) {
@@ -81,6 +94,11 @@ public final class FragmentBookmarkBinding implements ViewBinding {
 
       return new FragmentBookmarkBinding((SwipeRefreshLayout) rootView, photosGrid, statusImage,
           swipeLayout);
+=======
+      SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) rootView;
+
+      return new FragmentBookmarkBinding((SwipeRefreshLayout) rootView, photosGrid, swipeLayout);
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -38,7 +38,11 @@ public final class BookmarkAdapter extends androidx.recyclerview.widget.Recycler
         return 0;
     }
     
+<<<<<<< HEAD
     @kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004R\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\t\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\n\u0010\bR\u0011\u0010\u000b\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\f\u0010\bR\u0011\u0010\r\u001a\u00020\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0011\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\bR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0017"}, d2 = {"Lcom/raian/newsappproject/adapter/BookmarkAdapter$ItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "(Landroid/view/View;)V", "authorName", "Landroid/widget/TextView;", "getAuthorName", "()Landroid/widget/TextView;", "date", "getDate", "description", "getDescription", "image", "Landroid/widget/ImageView;", "getImage", "()Landroid/widget/ImageView;", "newsCard", "Landroidx/cardview/widget/CardView;", "getNewsCard", "()Landroidx/cardview/widget/CardView;", "title", "getTitle", "app_debug"})
+=======
+    @kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004R\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\t\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\n\u0010\bR\u0011\u0010\u000b\u001a\u00020\f\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\bR\u0011\u0010\u0011\u001a\u00020\u0012\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\u0016\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\bR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u001b"}, d2 = {"Lcom/raian/newsappproject/adapter/BookmarkAdapter$ItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "(Landroid/view/View;)V", "authorName", "Landroid/widget/TextView;", "getAuthorName", "()Landroid/widget/TextView;", "date", "getDate", "deleteBtn", "Landroidx/constraintlayout/utils/widget/ImageFilterButton;", "getDeleteBtn", "()Landroidx/constraintlayout/utils/widget/ImageFilterButton;", "description", "getDescription", "image", "Landroid/widget/ImageView;", "getImage", "()Landroid/widget/ImageView;", "newsCard", "Landroidx/cardview/widget/CardView;", "getNewsCard", "()Landroidx/cardview/widget/CardView;", "title", "getTitle", "app_debug"})
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     public static final class ItemViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         private final android.view.View view = null;
         @org.jetbrains.annotations.NotNull()
@@ -53,6 +57,11 @@ public final class BookmarkAdapter extends androidx.recyclerview.widget.Recycler
         private final android.widget.TextView date = null;
         @org.jetbrains.annotations.NotNull()
         private final androidx.cardview.widget.CardView newsCard = null;
+<<<<<<< HEAD
+=======
+        @org.jetbrains.annotations.NotNull()
+        private final androidx.constraintlayout.utils.widget.ImageFilterButton deleteBtn = null;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         
         public ItemViewHolder(@org.jetbrains.annotations.NotNull()
         android.view.View view) {
@@ -88,5 +97,13 @@ public final class BookmarkAdapter extends androidx.recyclerview.widget.Recycler
         public final androidx.cardview.widget.CardView getNewsCard() {
             return null;
         }
+<<<<<<< HEAD
+=======
+        
+        @org.jetbrains.annotations.NotNull()
+        public final androidx.constraintlayout.utils.widget.ImageFilterButton getDeleteBtn() {
+            return null;
+        }
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     }
 }

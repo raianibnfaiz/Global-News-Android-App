@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.raian.newsappproject.app-mergeDebugResources-49:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\7243fe10d749b7a6862ec178d21bf87a\\transformed\\material-1.7.0\\res\\values-small-v4\\values-small-v4.xml",
+=======
+            "outputFile": "com.raian.newsappproject.app-mergeDebugResources-52:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\BJIT\\.gradle\\caches\\transforms-3\\7243fe10d749b7a6862ec178d21bf87a\\transformed\\material-1.7.0\\res\\values-small-v4\\values-small-v4.xml",
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

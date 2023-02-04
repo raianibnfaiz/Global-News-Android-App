@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.raian.newsappproject.R
 import com.squareup.picasso.Picasso
@@ -33,9 +33,10 @@ class DetailNewsArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val title = view.findViewById<TextView>(R.id.newTitle)
-        val description = view.findViewById<TextView>(R.id.newsDescription)
+        val description = view.findViewById<TextView>(R.id.tv_description)
         val content = view.findViewById<TextView>(R.id.newsContent)
         val imageView = view.findViewById<ImageView>(R.id.newsImage)
+        val sourceNews = view.findViewById<TextView>(R.id.newsSource)
         val continueButton = view.findViewById<Button>(R.id.continueButton)
 
         if (!TextUtils.isEmpty(args.details?.title)) {
@@ -54,6 +55,11 @@ class DetailNewsArticleFragment : Fragment() {
             content.text = args.details?.content
         }  else {
             content.text = "No Content"
+        }
+        if (!TextUtils.isEmpty(args.details?.source?.name)) {
+            sourceNews.text = args.details?.source?.name
+        }  else {
+            sourceNews.text = "Source Not Available"
         }
 
         if (!TextUtils.isEmpty(args.details?.urlToImage)) {
@@ -86,8 +92,8 @@ class DetailNewsArticleFragment : Fragment() {
 //                    view.findNavController().navigate(action)
 //                }
 //            }
-            val action = DetailNewsArticleFragmentDirections.actionDetailNewsArticleFragment2ToWebPageViewFragment(args.details.url!!)
-            view.findNavController().navigate(action)
+            val action = DetailNewsArticleFragmentDirections.actionDetailNewsArticleFragmentToWebPageViewFragment(args.details.url!!)
+            Navigation.findNavController(view).navigate(action)
         }
 
     }

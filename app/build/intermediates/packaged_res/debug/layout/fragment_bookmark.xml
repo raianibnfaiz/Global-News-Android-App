@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2"
         tools:itemCount="16"
+<<<<<<< HEAD
         tools:listitem="@layout/newsl_list_view_layout" />
 
     <ImageView
@@ -29,5 +30,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+       />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

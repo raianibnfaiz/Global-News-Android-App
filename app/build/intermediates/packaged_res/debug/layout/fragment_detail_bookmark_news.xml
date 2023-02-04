@@ -28,7 +28,11 @@
         tools:text="Title" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/newsDescription"
+=======
+        android:id="@+id/tv_description"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -45,7 +49,24 @@
         android:layout_margin="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/newsDescription"
+=======
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/newsSource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:fontFamily="@font/bell"
+        android:textSize="45sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newsContent"
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
         tools:text="Title" />
 
     <Button
@@ -53,9 +74,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/newsContent" />
+=======
+        android:text="Read More"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newsSource" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

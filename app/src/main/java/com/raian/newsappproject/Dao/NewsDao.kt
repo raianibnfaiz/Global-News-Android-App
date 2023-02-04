@@ -8,7 +8,7 @@ import com.raian.newsappproject.models.TempArticle
 
 @Dao
 interface NewsDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertArticles(articles: List<TempArticle>)
 
     @Query("SELECT * FROM articles")
@@ -40,12 +40,14 @@ interface NewsDao {
 
     //FOR BOOKMARK FUNCTIONALITY
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBookMark(article: Bookmark)
 
     @Query("SELECT * FROM bookmark")
     fun getAllBookMark(): LiveData<List<Bookmark>>
 
+    @Delete
+    suspend fun deleteBookMarKArticle(bookMarkNews: Bookmark)
     @Update
     suspend fun update(article: TempArticle)
 

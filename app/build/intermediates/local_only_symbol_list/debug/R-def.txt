@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+<<<<<<< HEAD
 color black
 color purple_200
 color purple_500
@@ -8,6 +9,23 @@ color teal_200
 color teal_700
 color white
 drawable baseline_favorite_border_24
+=======
+color black_light
+color ic_launcher_background
+color primaryColor
+color primaryDarkColor
+color primaryLightColor
+color primaryTextColor
+color secondaryColor
+color secondaryDarkColor
+color secondaryLightColor
+color secondaryTextColor
+drawable baseline_bookmark_24
+drawable baseline_bookmark_border_24
+drawable baseline_bookmark_remove_24
+drawable baseline_favorite_border_24
+drawable baseline_search_24
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 drawable ic_baseline_bookmark_24
 drawable ic_baseline_favorite_24
 drawable ic_baseline_home_24
@@ -19,6 +37,7 @@ drawable loading_animation
 drawable loading_img
 font bell
 font fabrica
+<<<<<<< HEAD
 id action_bookmarkFragment2_to_detailBookmarkNewsFragment
 id action_detailNewsArticleFragment2_to_webPageViewFragment
 id action_homeFragment2_to_detailNewsArticleFragment22
@@ -44,6 +63,32 @@ id newsDescription
 id newsImage
 id photos_grid
 id rl_wrapper
+=======
+id actionSearch
+id action_bookmarkFragment2_to_detailBookmarkNewsFragment
+id action_detailBookmarkNewsFragment_to_webPageViewFragment
+id action_detailNewsArticleFragment_to_webPageViewFragment
+id action_homeFragment2_to_detailNewsArticleFragment
+id authorAndDate
+id bookmarkFragment2
+id cardViewNews
+id continueButton
+id deleteBookMark
+id detailBookmarkNewsFragment
+id detailNewsArticleFragment
+id details
+id favouriteIcon
+id homeFragment2
+id iv_image
+id nav_graph
+id nav_host_fragment_activity_main
+id nav_view
+id newTitle
+id newsContent
+id newsImage
+id newsSource
+id photos_grid
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 id rv_recyclerView
 id settingsFragment
 id status_image
@@ -52,7 +97,10 @@ id swipeRefreshLayout
 id tab_layout_home
 id termsConditionFragment
 id tv_author
+<<<<<<< HEAD
 id tv_date
+=======
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 id tv_description
 id tv_publishDate
 id tv_title
@@ -63,9 +111,12 @@ layout activity_main
 layout fragment_bookmark
 layout fragment_detail_bookmark_news
 layout fragment_detail_news_article
+<<<<<<< HEAD
 layout fragment_entertainment
 layout fragment_general
 layout fragment_health
+=======
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 layout fragment_home
 layout fragment_science
 layout fragment_sports
@@ -74,10 +125,18 @@ layout fragment_top_news
 layout fragment_web_page_view
 layout item_layout
 layout new_item_layout
+<<<<<<< HEAD
 layout newsl_list_view_layout
 menu bottom_nav_menu
 menu options_menu
 mipmap ic_launcher
+=======
+menu bottom_nav_menu
+menu menu_item
+menu options_menu
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 mipmap ic_launcher_round
 navigation nav_graph
 string app_name

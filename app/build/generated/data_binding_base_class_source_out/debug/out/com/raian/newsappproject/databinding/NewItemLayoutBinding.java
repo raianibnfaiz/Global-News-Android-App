@@ -5,11 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+<<<<<<< HEAD
+=======
+import android.widget.LinearLayout;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.utils.widget.ImageFilterButton;
+<<<<<<< HEAD
+=======
+import androidx.constraintlayout.widget.ConstraintLayout;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.raian.newsappproject.R;
@@ -22,9 +30,21 @@ public final class NewItemLayoutBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+<<<<<<< HEAD
   public final CardView cardViewNews;
 
   @NonNull
+=======
+  public final LinearLayout authorAndDate;
+
+  @NonNull
+  public final CardView cardViewNews;
+
+  @NonNull
+  public final ConstraintLayout details;
+
+  @NonNull
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
   public final ImageFilterButton favouriteIcon;
 
   @NonNull
@@ -42,12 +62,23 @@ public final class NewItemLayoutBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
+<<<<<<< HEAD
   private NewItemLayoutBinding(@NonNull CardView rootView, @NonNull CardView cardViewNews,
+=======
+  private NewItemLayoutBinding(@NonNull CardView rootView, @NonNull LinearLayout authorAndDate,
+      @NonNull CardView cardViewNews, @NonNull ConstraintLayout details,
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
       @NonNull ImageFilterButton favouriteIcon, @NonNull ImageView ivImage,
       @NonNull TextView tvAuthor, @NonNull TextView tvDescription, @NonNull TextView tvPublishDate,
       @NonNull TextView tvTitle) {
     this.rootView = rootView;
+<<<<<<< HEAD
     this.cardViewNews = cardViewNews;
+=======
+    this.authorAndDate = authorAndDate;
+    this.cardViewNews = cardViewNews;
+    this.details = details;
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     this.favouriteIcon = favouriteIcon;
     this.ivImage = ivImage;
     this.tvAuthor = tvAuthor;
@@ -83,8 +114,25 @@ public final class NewItemLayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+<<<<<<< HEAD
       CardView cardViewNews = (CardView) rootView;
 
+=======
+      id = R.id.authorAndDate;
+      LinearLayout authorAndDate = ViewBindings.findChildViewById(rootView, id);
+      if (authorAndDate == null) {
+        break missingId;
+      }
+
+      CardView cardViewNews = (CardView) rootView;
+
+      id = R.id.details;
+      ConstraintLayout details = ViewBindings.findChildViewById(rootView, id);
+      if (details == null) {
+        break missingId;
+      }
+
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
       id = R.id.favouriteIcon;
       ImageFilterButton favouriteIcon = ViewBindings.findChildViewById(rootView, id);
       if (favouriteIcon == null) {
@@ -121,8 +169,13 @@ public final class NewItemLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+<<<<<<< HEAD
       return new NewItemLayoutBinding((CardView) rootView, cardViewNews, favouriteIcon, ivImage,
           tvAuthor, tvDescription, tvPublishDate, tvTitle);
+=======
+      return new NewItemLayoutBinding((CardView) rootView, authorAndDate, cardViewNews, details,
+          favouriteIcon, ivImage, tvAuthor, tvDescription, tvPublishDate, tvTitle);
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

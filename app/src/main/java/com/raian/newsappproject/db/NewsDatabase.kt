@@ -10,7 +10,7 @@ import com.raian.newsappproject.converter.NewsConverter
 import com.raian.newsappproject.models.Bookmark
 import com.raian.newsappproject.models.TempArticle
 
-@Database(entities = [TempArticle::class, Bookmark::class], version = 3, exportSchema = false)
+@Database(entities = [TempArticle::class, Bookmark::class], version = 5, exportSchema = false)
 @TypeConverters(NewsConverter::class)
 abstract class NewsDatabase : RoomDatabase() {
     abstract fun newsDao(): NewsDao

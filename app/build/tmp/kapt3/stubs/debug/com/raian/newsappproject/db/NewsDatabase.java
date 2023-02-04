@@ -3,7 +3,11 @@ package com.raian.newsappproject.db;
 import java.lang.System;
 
 @androidx.room.TypeConverters(value = {com.raian.newsappproject.converter.NewsConverter.class})
+<<<<<<< HEAD
 @androidx.room.Database(entities = {com.raian.newsappproject.models.TempArticle.class, com.raian.newsappproject.models.Bookmark.class}, version = 3, exportSchema = false)
+=======
+@androidx.room.Database(entities = {com.raian.newsappproject.models.TempArticle.class, com.raian.newsappproject.models.Bookmark.class}, version = 5, exportSchema = false)
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 @kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\'\u0018\u0000 \u00052\u00020\u0001:\u0001\u0005B\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H&\u00a8\u0006\u0006"}, d2 = {"Lcom/raian/newsappproject/db/NewsDatabase;", "Landroidx/room/RoomDatabase;", "()V", "newsDao", "Lcom/raian/newsappproject/Dao/NewsDao;", "Companion", "app_debug"})
 public abstract class NewsDatabase extends androidx.room.RoomDatabase {
     @org.jetbrains.annotations.NotNull()

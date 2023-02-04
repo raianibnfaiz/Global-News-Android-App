@@ -10,19 +10,35 @@
         android:id="@+id/tab_layout_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:contentDescription="description"
         app:tabMode="scrollable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+=======
+        android:contentDescription="dkjhbddkjf"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabMode="scrollable" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/tab_layout_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+=======
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout_home" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
 
 </androidx.constraintlayout.widget.ConstraintLayout>

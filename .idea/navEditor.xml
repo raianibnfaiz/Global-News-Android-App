@@ -13,8 +13,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
+<<<<<<< HEAD
                             <option name="x" value="286" />
                             <option name="y" value="-25" />
+=======
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -34,22 +39,47 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
+<<<<<<< HEAD
                             <option name="x" value="243" />
                             <option name="y" value="365" />
+=======
+                            <option name="x" value="256" />
+                            <option name="y" value="12" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                           </Point>
                         </option>
                       </LayoutPositions>
                     </value>
                   </entry>
+<<<<<<< HEAD
                   <entry key="detailNewsArticleFragment2">
+=======
+                  <entry key="detailNewsArticleFragment">
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
+<<<<<<< HEAD
                             <option name="x" value="12" />
                             <option name="y" value="368" />
                           </Point>
                         </option>
+=======
+                            <option name="x" value="256" />
+                            <option name="y" value="368" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_detailNewsArticleFragment_to_webPageViewFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -59,12 +89,20 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="12" />
+<<<<<<< HEAD
                             <option name="y" value="12" />
+=======
+                            <option name="y" value="368" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+<<<<<<< HEAD
                             <entry key="action_homeFragment2_to_detailNewsArticleFragment22">
+=======
+                            <entry key="action_homeFragment2_to_detailNewsArticleFragment">
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -79,8 +117,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
+<<<<<<< HEAD
                             <option name="x" value="-176" />
                             <option name="y" value="-14" />
+=======
+                            <option name="x" value="500" />
+                            <option name="y" value="368" />
+>>>>>>> 3463a18baddb9f1f5bdb3373b9c94df267e1e119
                           </Point>
                         </option>
                       </LayoutPositions>
